@@ -1,9 +1,7 @@
 from django.shortcuts import get_object_or_404, render
-from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
-from properties.choices import price_choices, bedroom_choices, bathroom_choices, garage_choices, state_choices         
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator        
 from django.contrib import messages
 from properties.choices import price_choices, bedroom_choices, bathroom_choices, garage_choices, state_choices  
- 
 from .models import Property_single
 
 def properties(request):
@@ -13,12 +11,12 @@ def properties(request):
     page = request.GET.get('page')
     paged_properties = paginator.get_page(page)
 
-    context = {
-        'propeties' : paged_properties
+    context = { 
+        'properties' : paged_properties
     }
 
     return render(request, 'properties/properties.html', context)
-
+ 
 def property_single(request, property_single_id):
     property_single = get_object_or_404(Property_single, pk= property_single_id) 
      
@@ -54,6 +52,13 @@ def search(request):
         bedrooms = request.GET['bedrooms']
         if bedrooms:
             queryset_list = queryset_list.filter(bedrooms__lte=bedrooms)
+    
+    # Bathrooms
+    if 'bathrooms' in request.GET:
+        bathrooms = request.GET['bathrooms']
+        if bathrooms:
+            queryset_list = queryset_list.filter(bathrooms__lte=bathrooms)
+
 
     # Price
     if 'price' in request.GET:
@@ -65,6 +70,7 @@ def search(request):
     context = {
         'state_choices': state_choices,
         'bedroom_choices': bedroom_choices,
+        'bathroom_choices': bathroom_choices,
         'price_choices': price_choices,
         'properties': queryset_list,
         'values': request.GET

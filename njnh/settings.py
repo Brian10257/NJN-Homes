@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'about.apps.AboutConfig',
+    'accounts.apps.AccountsConfig',
     'agents.apps.AgentsConfig',
     'blogs.apps.BlogsConfig',
     'contacts.apps.ContactsConfig',
@@ -43,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.humanize',
+    'django.contrib.humanize', 
 ]
 
 MIDDLEWARE = [

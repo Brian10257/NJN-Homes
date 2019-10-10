@@ -5,29 +5,24 @@ from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.contrib import messages
 from properties.choices import price_choices, bedroom_choices, bathroom_choices, garage_choices, state_choices          
 from agents.models import Agent
-from about.models import About
+from .models import About
 
 
-def about(request):
-    about = Agent.objects.order_by('-hire_date')
-    paginator = Paginator(about, 6)
-    page = request.GET.get('page')
-    paged_about = paginator.get_page(page)
+def about(request): 
+    about = About.objects.all()
     
     # Get MVP 
     mvp_agents = Agent.objects.all().filter(is_mvp = True)
 
-    agents = Agent.objects.all()
-    paginator = Paginator(agents, 1)
-    page = request.GET.get('page')
-    paged_agents = paginator.get_page(page)
+    agents = Agent.objects.all() [:3]
+
+    
 
     context= {
-        'agents': agents,
         'mvp_agents': mvp_agents,
-        'agents' : paged_agents,
-        'about' : paged_about
+        'about' : about, 
+        'agents': agents, 
     }
     
-    return render (request, 'pages/about.html')  
+    return render (request, 'pages/about.html', context)  
  
