@@ -16,7 +16,7 @@ class Property_single(models.Model):
     status = models.CharField(max_length = 5000, blank = True) 
     bedrooms = models.IntegerField()
     bathrooms = models.DecimalField(max_digits = 5, decimal_places = 1)
-    garage = models.IntegerField(default = 0, blank = True) 
+    garage = models.IntegerField() 
     area = models.CharField(max_length = 50000, blank = True)
     amenity1 = models.CharField(max_length = 5000, blank = True)
     amenity2 = models.CharField(max_length = 5000, blank = True)

@@ -19,6 +19,11 @@ def agents(request):
         'agents': agents,
         'mvp_agents': mvp_agents,
         'agents' : paged_agents,
+        'state_choices': state_choices,
+        'bedroom_choices': bedroom_choices, 
+        'bathroom_choices': bathroom_choices,
+        'garage_choices': garage_choices,
+        'price_choices': price_choices
     }
 
     return render (request, 'agents/agents.html', context)  
@@ -29,7 +34,11 @@ def agent(request, agent_id):
     context= {
         'agent': agent,
         'properties' : properties,
-        
+        'state_choices': state_choices,
+        'bedroom_choices': bedroom_choices, 
+        'bathroom_choices': bathroom_choices,
+        'garage_choices': garage_choices,
+        'price_choices': price_choices
     }
 
     return render(request, 'agents/agent.html', context)

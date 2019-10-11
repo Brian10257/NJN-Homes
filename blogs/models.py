@@ -15,10 +15,16 @@ class Blog(models.Model):
     twitter = models.CharField(max_length = 50000, blank = True)
     instagram = models.CharField(max_length = 50000, blank = True)
     pinterest = models.CharField(max_length = 50000, blank = True)
-    image = models.ImageField(upload_to='photos/blog/comments/%Y', blank = True, null = True)
-    user_name = models.CharField(max_length = 50000, blank = True)
-    comment = models.TextField(blank = True)
-    comment_date = models.DateTimeField(default = datetime.now, blank = True)
     date_published = models.DateTimeField(default = datetime.now, blank = True)
     def __str__(self):
         return self.title
+
+class Comment(models.Model):
+    image = models.ImageField(blank = True, null = True)
+    name = models.CharField(max_length = 50000)
+    email = models.EmailField(max_length = 5000, blank = True)
+    website = models.CharField(max_length = 5000, blank = True)
+    comment = models.TextField()
+    comment_date = models.DateTimeField(default = datetime.now, blank = True)
+    def __str__(self):
+        return self.name

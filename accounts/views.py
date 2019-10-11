@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages, auth
+from properties.choices import price_choices, bedroom_choices, bathroom_choices, garage_choices, state_choices
 from django.contrib.auth.models import User
 from contacts.models import Contact
 
@@ -68,6 +69,11 @@ def logout(request):
 def dashboard(request):
     user_contacts = Contact.objects.order_by('-contact_date').filter(user_id=request.user.id)
     context = {
-        'contacts': user_contacts
+        'contacts': user_contacts,
+        'state_choices': state_choices,
+        'bedroom_choices': bedroom_choices, 
+        'bathroom_choices': bathroom_choices,
+        'garage_choices': garage_choices,
+        'price_choices': price_choices
     }
     return render (request, 'accounts/dashboard.html', context)

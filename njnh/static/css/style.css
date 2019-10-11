@@ -919,15 +919,15 @@ a:hover {
 
 .intro .intro-title-top {
   -webkit-animation-delay: .6s;
-  animation-delay: .6s;
+  animation-delay: .2s;
   margin-bottom: 1rem;
   font-size: .9rem;
   color: #ffffff;
-  letter-spacing: .05em;
+  letter-spacing: .05em; 
 }
 
 .intro .intro-title {
-  transition-duration: 9s !important;
+  transition-duration: 5s !important;
   color: #ffffff;
   font-weight: 700;
   font-size: 2.8rem;

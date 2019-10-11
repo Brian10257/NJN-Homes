@@ -21,7 +21,12 @@ def about(request):
     context= {
         'mvp_agents': mvp_agents,
         'about' : about, 
-        'agents': agents, 
+        'agents': agents,
+        'state_choices': state_choices,
+        'bedroom_choices': bedroom_choices, 
+        'bathroom_choices': bathroom_choices,
+        'garage_choices': garage_choices,
+        'price_choices': price_choices 
     }
     
     return render (request, 'pages/about.html', context)  
