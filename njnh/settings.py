@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'blogs.apps.BlogsConfig',
     'contacts.apps.ContactsConfig',
     'pages.apps.PagesConfig',
+    'consult.apps.ConsultConfig',
     'properties.apps.PropertiesConfig',
     'django.contrib.contenttypes',
     'django.contrib.sessions',

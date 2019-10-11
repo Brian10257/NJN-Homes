@@ -8,6 +8,7 @@ urlpatterns = [
     path('', include('pages.urls')),
     path('', include('properties.urls')),
     path('', include('contacts.urls')),
+    path('', include('consult.urls')),
     path('', include('accounts.urls')),
     path('', include('blogs.urls')),
     path('', include('agents.urls')),

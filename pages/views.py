@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse
 from django.contrib import messages
@@ -7,6 +7,7 @@ from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from agents.models import Agent
 from about.models import About
 from blogs.views import Blog
+from consult.models import Consult
 from properties.models import Property_single
 
 def index(request):
