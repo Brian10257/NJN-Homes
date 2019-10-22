@@ -13,11 +13,11 @@
             <form action="{% url 'search2' %}">
                 <fieldset>
                     <div class="col-md-4 col-sm-4 no-pad">
-                        <input type="text" class="form-control border-right" value ="{{values.keywords}}" name="keywords" placeholder="Skills, Job Title, Companies" />
+                        <input type="text" name="keywords" value ="{{values.keywords}}" class="form-control border-right" placeholder="Skills, Designation, Companies" />
                     </div>
                     <div class="col-md-3 col-sm-3 no-pad">
                         <select class="selectpicker border-right" name="experience">
-                            <option selected="true">Experience</option>
+                            <option selected="true"  disabled="disabled">Experience</option>
                             {% for key,value in experience_choices.items %}
                                   <option value="{{key}}">{{value}}</option>
                             {% endfor %}
@@ -72,7 +72,7 @@
 <section class="jobs">
     <div class="container">
         <div class="text-center">
-            <h2>Latest Jobs</h2>
+            <h2 style="font-family: Aclonica;">Latest Jobs</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
         </div>
 {% if carriers %}
@@ -82,7 +82,7 @@
                 <div class="row">
                     <div class="col-md-2 col-sm-2">
                         <div class="company-logo">
-                            <img src="{{carrier.logo.url}}" class="img-responsive" alt="" />
+                            <img src="{{carrier.logo.url}}" class="img-responsive" alt="{{carrier.company}} Logo" />
                         </div>
                     </div>
                     <div class="col-md-8 col-sm-8">
@@ -104,7 +104,11 @@
     </div>
 {% endif %}
         <div class="text-center">
+            {% if user.is_authenticated %}
             <a href="{% url 'jobs' %}"><button type="submit" style="width: 200px; text-align:center" class="form-submit">Brows All Jobs</button></></a>
+            {% else %}
+            <div class="col-md-12"><a href="{% url 'login' %}"><span style="font-family:Aclonica">LogIn</span></a> To Brows All Job Vaccancies</div>
+            {% endif %}
         </div>
     </div>
 </section>

@@ -26,7 +26,7 @@
                     </div>
                     <div class="col-md-9 col-sm-9 text-capitalize">
                         <div class="profile-content">
-                                <h2>COMPANY: <u>{{carrier.company}}</u><span>{{carrier.job_title}}</span></h2>
+                                <h2 style="padding-top: 20px;">COMPANY: <u>{{carrier.company}}</u><span>{{carrier.job_title}}</span></h2>
                                 {%if carrier.job_available is True%}
                                 <p>Job vacancy Now Available</p>
                                 {% else %}
@@ -35,7 +35,7 @@
                                 <ul class="information">
                                     <li><span>Address:</span>{{carrier.address}}</li>
                                     <li><span>Website:</span>{{carrier.website}}</li>
-                                    <li><span>Employee:</span>{{carrier.employer}}</li>
+                                    <li><span>Employer:</span>{{carrier.employer}}</li>
                                     <li><span>Mail:</span>{{carrier.mail}}</li>
                                     <li><span>From:</span>{{carrier.date_posted}}</li>
                                 </ul>
@@ -195,9 +195,9 @@
                 {% else %}
                 <div class="col-md-12 text-capitalize">
                   <p class="text-capitalize" style="font-size: 20px;">
-                   you must be <span><a href="{% url 'register' %}"  style="font-family: krinkes_regular_personal_usRg; color: rgb(7, 148, 61);">
-                     Registered<span></a> and/Or<a href="{% url 'login' %}"  style="font-family: krinkes_regular_personal_usRg; color: rgb(7, 148, 61);">
-                      loggedIn</a></span> to Apply for a Job. on this site.
+                   you must  <span><a href="{% url 'register' %}"  style="font-family: Aclonica; color: rgb(7, 148, 61);">
+                     Register<span></a> and/Or<a href="{% url 'login' %}"  style="font-family: Aclonica; color: rgb(7, 148, 61);">
+                      logIn</a></span> to Apply for a Job. on this site.
                    </a></span>
                   </p>
                 </div>

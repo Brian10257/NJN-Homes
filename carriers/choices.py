@@ -1,14 +1,14 @@
 experience_choices = {
-    '1':'1 year',
-    '2':'2 years',
-    '3':'3 years',
-    '4':'4 years',
-    '5':'5 years',
-    '6':'6 years',
-    '7':'7 years',
-    '8':'8 years',
-    '9': '9 years',
-    '10':'10 years+'  
+    '1':1,
+    '2':2,
+    '3':3,
+    '4':4,
+    '5':5,
+    '6':6,
+    '7':7,
+    '8':8,
+    '9': 9,
+    '10':10 
 }
 
 job_title_choices = {
@@ -24,7 +24,7 @@ job_title_choices = {
     'Inspectors': 'Inspectors',
     'Real estate managers': 'Real estate managers',
     'Real estate appraisers': 'Real estate appraisers',
-    'loan professional': 'loan professional',
+    'Loan Professional': 'Loan Professional',
     'Loan underwriters':'Loan underwriters',
     'Licensed closing agents': 'Licensed closing agents',
     'Real Estate Consultant': 'Real Estate Consultant',
@@ -32,5 +32,11 @@ job_title_choices = {
     'Foreclosure specialists': 'Foreclosure specialists' ,
     'Web Developer' : 'Web Developer',    
     'Teacher': 'Teacher',
-    'Instructor': 'Instructor'
+    'Instructor': 'Instructor',
+    'Nurse':'Nurse',
+    'Medical Personel': 'Medical Personel',
+    'Computer Programmer': 'Computer Programmer',
+    'Web Administrator': 'Web Administrator',
+    'Data Base Manager': 'Data Base Manager',
+    'Financial Assistant': 'Financial Assistant'
 }

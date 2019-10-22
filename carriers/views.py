@@ -102,12 +102,12 @@ def search2(request):
         keywords = request.GET['keywords']
         if keywords:
             queryset_list = queryset_list.filter(Q(company__icontains=keywords)|
-                                                 Q(job_title__icontains=keywords)|
+                                                 Q(about_job__icontains=keywords)|
                                                  Q(job_available__icontains=keywords)|
                                                  Q(address__icontains=keywords)|
-                                                 Q(company__icontains=keywords)|
+                                                 Q(experience__icontains=keywords)|
                                                  Q(job_title__icontains=keywords)|
-                                                 Q(employer__icontains=keywords)|
+                                                 Q(date_posted__icontains=keywords)|
                                                  Q(responsibility_intro__icontains=keywords)|
                                                  Q(responsibility1__icontains=keywords)|
                                                  Q(responsibility2__icontains=keywords)|
@@ -137,7 +137,7 @@ def search2(request):
     if 'experience' in request.GET:
         experience = request.GET['experience']
         if experience:
-            queryset_list = queryset_list.filter(experience__iexact=experience)
+            queryset_list = queryset_list.filter(experience__lte=experience)
             
     # Job Title
     if 'job_title' in request.GET:
