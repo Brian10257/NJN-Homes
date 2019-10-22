@@ -15,7 +15,7 @@ def register(request):
         password2 = request.POST['password2']
 
         # Check if passwords match
-        if password == password2:
+        if password == password2: 
             # Check Username
             if User.objects.filter(username=username).exists():
                 messages.error(request, 'That username is taken')

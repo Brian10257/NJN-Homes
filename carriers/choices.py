@@ -8,7 +8,7 @@ experience_choices = {
     '7':'7 years',
     '8':'8 years',
     '9': '9 years',
-    '10':'10 years+',   
+    '10':'10 years+'  
 }
 
 job_title_choices = {
@@ -31,4 +31,6 @@ job_title_choices = {
     'Real estate lawyers': 'Real estate lawyers',
     'Foreclosure specialists': 'Foreclosure specialists' ,
     'Web Developer' : 'Web Developer',    
+    'Teacher': 'Teacher',
+    'Instructor': 'Instructor'
 }

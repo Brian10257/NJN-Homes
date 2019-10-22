@@ -10,7 +10,7 @@
       <div class="row">
         <div class="col-md-12 col-lg-8">
           <div class="title-single-box">
-            <h1 class="title-single" style="font-family: krinkes_decor_personal_useRg; color:#000000">{{blog.title}}</h1>
+            <h1 class="title-single" style="font-family: Aclonica; color:#000000">{{blog.title}}</h1>
             <span class="color-text-a">{{blog.sub_title}}.</span>
           </div>
         </div>
@@ -57,7 +57,7 @@
               </li>
             </ul>
           </div>
-          <div class="post-content color-text-a">
+          <div class="post-content">
             <p class="post-intro">
               {{blog.introduction}}
             </p>
@@ -137,7 +137,7 @@
               <div class="row">
                   <div class="col-md-12">
                       <div class="form-group">
-                        <input type="file" name="image" accept=".jpg, .jpeg, .png" id="image" style="font-size: 10px;" aria-required="false" required>
+                        <input type="file" name="image" accept=".jpg, .jpeg, .png" id="image"  aria-required="false" required>
                       </div>
                   </div>
                 <div class="col-md-6 mb-3">
@@ -172,7 +172,7 @@
                 </div>
                 {% else %}
                 <div class="col-md-12">
-                  <h3><a href="{% url 'login' %}"><span style="font-family: krinkes_decor_personal_useRg; color:#127709 ">Login</span></a> To Leave A Comment</h3>
+                  <h3><a href="{% url 'login' %}"><span style="font-family: krinkes_decor_personal_useRg; color:#127709 ">Login</span></a> To Post A Comment</h3>
                 </div>
                 {% endif %}
               </div>

@@ -9,3 +9,9 @@ $(document).ready(function(){
 				autoPlay:false
 			});
 		});	
+
+
+
+setTimeout(function(){
+	$('#message').fadeOut('slow');
+}, 5000);
