@@ -12,7 +12,7 @@ from team.models import Team
 
 def carriers(request):
     carriers = Carrier.objects.order_by('-date_posted').filter(is_published = True)[:6]
-    team = Team.objects.all() 
+    team = Team.objects.order_by('-date_posted') 
     
     context = {
         'team':team,    
@@ -75,7 +75,7 @@ def carrier(request, carrier_id):
     
 def jobs(request):
     carriers = Carrier.objects.order_by('-date_posted').filter(is_published = True) 
-    paginator = Paginator(carriers, 1)
+    paginator = Paginator(carriers, 6)
     page = request.GET.get('page')
     paged_carriers = paginator.get_page(page)
     

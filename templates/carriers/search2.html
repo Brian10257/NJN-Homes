@@ -6,7 +6,7 @@
 {% block content %}
 
 <!-- Inner Banner -->
-<section class="inner-banner">
+<section class="inner-banner" style="background:#242c36 url(/static/img/slider-01.jpg)">
     <div class="container">
         <div class="caption">
             <h2 style="font-family:Aclonica;">Search Results</h2>
@@ -14,11 +14,11 @@
         </div>
     </div>
 </section>
-
+ 
 <section class="jobs">
     <div class="container">
         <div class="text-center">
-            <h2>Results</h2>
+            <h2 style="font-family: Aclonica;">Results</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
         </div>
 {% if carriers %}
@@ -33,7 +33,7 @@
                     </div>
                     <div class="col-md-8 col-sm-8">
                         <div class="company-content">
-                            <h3>{{carrier.job_title}}</h3>
+                            <h3 style="font-family: krinkes_regular_personal_usRg;"><u>{{carrier.job_title}}</u></h3>
                             <p><span class="company-name"><i class="fa fa-briefcase"></i>{{carrier.company}}</span><span class="company-location"><i class="fa fa-map-marker"></i> {{carrier.address}}</span><span class="package"><i class="fa fa-money"></i>${{carrier.salary}}</span></p>
                         </div>
                     </div>

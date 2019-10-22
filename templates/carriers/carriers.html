@@ -17,7 +17,7 @@
                     </div>
                     <div class="col-md-3 col-sm-3 no-pad">
                         <select class="selectpicker border-right" name="experience">
-                            <option selected="true"  disabled="disabled">Experience</option>
+                            <option selected="true"  disabled="disabled">Years Of Experience</option>
                             {% for key,value in experience_choices.items %}
                                   <option value="{{key}}">{{value}}</option>
                             {% endfor %}
@@ -25,7 +25,7 @@
                     </div>
                     <div class="col-md-3 col-sm-3 no-pad">
                         <select class="selectpicker" name="job_title">
-                            <option selected="true" disabled="disabled">Job Category</option>
+                            <option selected="true" disabled="disabled">Job Title & Category</option>
                             {% for key,value in job_title_choices.items %}
                                   <option value="{{key}}">{{value}}</option>
                             {% endfor %}
@@ -87,7 +87,7 @@
                     </div>
                     <div class="col-md-8 col-sm-8">
                         <div class="company-content">
-                            <h3>{{carrier.job_title}}</h3>
+                            <h3 style="font-family: krinkes_regular_personal_usRg;"><u>{{carrier.job_title}}</u></h3>
                             <p><span class="company-name"><i class="fa fa-briefcase"></i>{{carrier.company}}</span><span class="company-location"><i class="fa fa-map-marker"></i> {{carrier.address}}</span><span class="package"><i class="fa fa-money"></i>{{carrier.salary}}</span></p>
                         </div>
                     </div>
@@ -147,7 +147,7 @@
     {% endfor %}
     {% else %}
     <div class="col-md-12 text-capitalize">
-        <h1 style="font-family: krinkes_regular_personal_usRg;">No Team members are listed at the moment. Please check on us  Later.</h1> 
+        <h1 style="font-family: krinkes_regular_personal_usRg;">No administrative members are available at the moment. Please check on us  Later.</h1> 
     </div>
 {% endif %}
         </div>
