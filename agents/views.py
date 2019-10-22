@@ -31,6 +31,7 @@ def agents(request):
 def agent(request, agent_id):
     agent = get_object_or_404(Agent, pk= agent_id) 
     properties = Property_single.objects.order_by('-list_date').filter(is_published = True)
+    property_single = Property_single.objects.all()
     context= {
         'agent': agent,
         'properties' : properties,
@@ -38,7 +39,7 @@ def agent(request, agent_id):
         'bedroom_choices': bedroom_choices, 
         'bathroom_choices': bathroom_choices,
         'garage_choices': garage_choices,
-        'price_choices': price_choices
+        'price_choices': price_choices,
     }
 
     return render(request, 'agents/agent.html', context)

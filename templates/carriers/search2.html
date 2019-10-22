@@ -1,0 +1,57 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% load humanize %}
+{% block title %} Jobs|Search Results{% endblock %}
+
+{% block content %}
+
+<!-- Inner Banner -->
+<section class="inner-banner">
+    <div class="container">
+        <div class="caption">
+            <h2>Search Results</h2>
+            <p>Get your Popular jobs <span>202 New job</span></p>
+        </div>
+    </div>
+</section>
+
+<section class="jobs">
+    <div class="container">
+        <div class="text-center">
+            <h2>Results</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+        </div>
+{% if carriers %}
+    {% for carrier in carriers %}
+        <div class="companies">
+            <div class="company-list">
+                <div class="row">
+                    <div class="col-md-2 col-sm-2">
+                        <div class="company-logo">
+                            <img src="{{carrier.logo.url}}" class="img-responsive" alt="" />
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8">
+                        <div class="company-content">
+                            <h3>{{carrier.job_title}}</h3>
+                            <p><span class="company-name"><i class="fa fa-briefcase"></i>{{carrier.company}}</span><span class="company-location"><i class="fa fa-map-marker"></i> {{carrier.address}}</span><span class="package"><i class="fa fa-money"></i>${{carrier.salary}}</span></p>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2">
+                        <a href="{% url 'carrier' carrier.id %}"><button type="submit" class="btn view-job" name="View Job">View Job</button></a>
+                    </div>
+                </div>
+            </div>
+    {% endfor %}
+    {% else %}
+    <div class="col-md-12">
+        <h1 style="font-family: krinkes_regular_personal_usRg; color:#000000">
+            No Jobs Available for Your Search, Please Try Again Later.
+        </h1>
+    </div>
+{% endif %}
+        </div>
+    </div>
+</section>
+    
+{% endblock %}

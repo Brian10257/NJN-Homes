@@ -84,12 +84,12 @@
 {% include 'partials/_alerts.html' %}
 
 <!--/ Property Star /-->
-<section class="intro-single">
+<section class="intro-single text-capitalize">
   <div class="container">
     <div class="row">
       <div class="col-md-12 col-lg-8">
         <div class="title-single-box">
-          <h2 class="title-single">Lattest Properties</h2>
+          <h2 class="title-single" style="font-family: krinkes_decor_personal_useRg; color:#000000">Latest Properties</h2>
           <span class="color-text-a">Listings/Properties</span>
         </div>
       </div>
@@ -111,7 +111,7 @@
 
 
 <!--/ Property Grid Star /-->
-<section class="property-grid grid">
+<section class="property-grid grid text-capitalize">
   <div class="container">
     <div class="row">
 {% if properties %}
@@ -166,8 +166,8 @@
   {% endfor %}
 {% else %}
 <div class="col-md-12">
-  <h1>
-    No Properties Available
+  <h1 style="font-family: krinkes_regular_personal_usRg; color:#000000">
+    No Properties Available At The Moment, Please Check Again Later For Latest Listings.
   </h1>
 </div>
 {% endif %}
@@ -177,12 +177,12 @@
   <!--/ Property End /-->
     
 <!--/ Intro Single star /-->
-<section class="intro-single">
+<section class="intro-single text-capitalize">
   <div class="container">
     <div class="row">
       <div class="col-md-12 col-lg-8">
         <div class="title-single-box">
-          <h2 class="title-single">AGENTS</h2>
+          <h2 class="title-single" style="font-family: krinkes_decor_personal_useRg; color:#000000">Agents</h2>
           <span class="color-text-a">Property Agents</span>
         </div>
       </div>
@@ -203,7 +203,7 @@
 <!--/ Intro Single End /-->
   
 <!--/ Agents Grid Star /-->
-<section class="agents-grid grid">
+<section class="agents-grid grid text-capitalize">
   <div class="container">
     <div class="row">
     {% if agents %}
@@ -217,7 +217,8 @@
                 <div class="card-header-d">
                   <div class="card-title-d align-self-center">
                     <h3 class="title-d">
-                      <a href="{% url 'agent' agent.id %}" class="link-two">{{agent.name}}</a>
+
+                      <a {% if user.is_authenticated %} href="{% url 'agent' agent.id %}" {% endif %} class="link-two">{{agent.name}}</a>
                     </h3>
                   </div>
                 </div>
@@ -226,6 +227,7 @@
                     {{agent.description | truncatechars:100}}
                   </p>
                   <div class="info-agents color-a">
+                  {% if user.is_authenticated %}
                     <p>
                       <strong>Phone: </strong> {{agent.phone}}</p>
                     <p>
@@ -261,6 +263,12 @@
                         </a>
                       </li>
                     </ul>
+                  {% else %}
+                    <div>
+                      <span class="col-md-12 text-capitalize"><a href="{% url 'login' %}" style="font-family: krinkes_regular_personal_usRg;
+                        font-size: 20px">login</a> to view agents contact details</span>
+                    </div>
+                  {% endif %}
                   </div>
                 </div>
               </div>
@@ -269,7 +277,7 @@
       {% endfor %}
     {% else %}
     <div class="col-md-12">
-      <h1>
+      <h1 style="font-family: krinkes_regular_personal_usRg; color:#000000">
         No Agents Available
       </h1>
     </div>
@@ -288,7 +296,7 @@
     <div class="row">
       <div class="col-md-12 col-lg-8">
         <div class="title-single-box">
-          <h2 class="title-single">Lattest Info</h2>
+          <h2 class="title-single" style="font-family: krinkes_decor_personal_useRg; color:#000000">Lattest Info</h2>
           <span class="color-text-a">Grid News</span>
         </div>
       </div>
@@ -309,7 +317,7 @@
 <!--/ Intro Single End /-->
 
 <!--/ News Grid Star /-->
-<section class="news-grid grid">
+<section class="news-grid grid text-capitalize">
   <div class="container">
     <div class="row">
     {% if blogs %}
@@ -326,7 +334,7 @@
               </div>
               <div class="card-title-b">
                 <h2 class="title-2">
-                  <a href="{% url 'blog' blog.id %}">{{blog.category}}</a>
+                  <a href="{% url 'blog' blog.id %}">{{blog.sub_title}}</a>
                 </h2>
               </div>
               <div class="card-date">
@@ -339,7 +347,7 @@
       {% endfor %}
     {% else %}
     <div class="col-md-12">
-      <h1>
+      <h1 style="font-family: krinkes_regular_personal_usRg; color:#000000">
         No News Available
       </h1>
     </div>

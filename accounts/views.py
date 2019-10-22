@@ -39,32 +39,49 @@ def register(request):
             return redirect ('register')
       
     else:
-        return render (request, 'accounts/register.html')
+        
+        context = {
+            'price_choices': price_choices,
+            'state_choices': state_choices,
+            'bedroom_choices': bedroom_choices,
+            'bathroom_choices':bathroom_choices,
+            'garage_choices': garage_choices
+    }
+        return render (request, 'accounts/register.html', context)
 
 
 def login(request):
     if request.method== 'POST':
         username = request.POST['username']
         password = request.POST['password']
-
         user = auth.authenticate(username = username, password = password)
-
+    
         if user is not None:
             auth.login(request, user)
-            messages.success(request, 'You are now logged in')
+            messages.success(request, 'Login Successful. Happy Browsing')
             return redirect('dashboard')
         else:
-            messages.error(request, 'Invalid Credentials')
+            messages.error(request, 'Invalid Credentials: Please Verify You Entered The Correct Infomation.')
             return redirect('login')
     else:
-        return render (request, 'accounts/login.html')
+        context = {
+        'price_choices': price_choices,
+        'state_choices': state_choices,
+        'bedroom_choices': bedroom_choices,
+        'bathroom_choices':bathroom_choices,
+        'garage_choices': garage_choices
+    }
+        return render (request, 'accounts/login.html', context)
+    
+    
+    
 
 
 def logout(request):
      if request.method == 'POST':
          auth. logout(request)
          messages.success(request, 'You are now logged out')
-         return redirect ('index')
+         return redirect ('login')
 
 def dashboard(request):
     user_contacts = Contact.objects.order_by('-contact_date').filter(user_id=request.user.id)

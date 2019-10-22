@@ -1,0 +1,85 @@
+#header{
+    height: 50px;
+    background:#1ca117;
+    color: rgb(197, 67, 35);
+}
+
+#branding h1, #branding h1 a:link, #branding h1 a:visited{
+    color: #000;
+}
+
+#branding h1{ 
+    font-family: Aclonica;
+    font-style: oblique;
+}
+
+a:link, a:visited{
+    color: #1ca117;
+}
+
+a:hover{
+    color: #8fd48d;
+}
+
+
+
+.object-tools a:link {
+    background: rgb(27, 206, 72)
+}
+
+#header a:link, #header a:visited{
+    color: crimson
+}
+
+a.section:link, a.section:visited{
+    color: rgb(212, 201, 149)));
+}
+
+a.active.selector-chooseall, a.active.selector-clearall{
+    color: antiquewhite
+}
+
+div.breadcrumbs{
+    background: rgb(98, 155, 6);
+    color: rgb(255, 255, 255);
+}
+
+div.breadcrumbs a {
+    color: rgb(0, 0, 0);
+}
+
+.module h2, .module caption, .inline-group h2{
+    background: linear-gradient(to right, #000000, #1ca117);
+}
+
+.button, input[type=submit], input[type=button], .submit-row input {
+    background:#06bd52;
+    color: rgb(255, 255, 255);
+}
+
+.button.default, input[type="submit"].default, .submit-row input.default{
+    background:#1ca117;
+    color: rgb(0, 0, 0);
+}
+
+.submit-now :hover{
+    background-color: #000;
+}
+
+#content-related{
+    background: #89d623;
+    color: aliceblue;
+}
+.quiet, a.quiet:link, a.quiet:visited{
+    color: rgb(0, 0, 0);
+}
+
+.selector-chosen {
+    background: linear-gradient(to right, #000000, #1ca117);
+    color: #fff;
+}
+
+.selector-available {
+    background: linear-gradient(to right, #000000, #1ca117);
+    color: #fff;
+}

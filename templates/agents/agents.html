@@ -10,7 +10,7 @@
       <div class="row">
         <div class="col-md-12 col-lg-8">
           <div class="title-single-box">
-            <h1 class="title-single">Our Agents</h1>
+            <h1 class="title-single" style="font-family: krinkes_regular_personal_usRg; color:#000000">Our Agents</h1>
             <span class="color-text-a">View Our Agents</span>
           </div>
         </div>
@@ -30,7 +30,7 @@
     </div>
   </section>
   <!--/ Intro Single End /-->
-
+{% if user.is_authenticated %}
   <!--/ Agents Grid Star /-->
   <section class="agents-grid grid">
     <div class="container">
@@ -45,7 +45,7 @@
             <div class="card-overlay card-overlay-hover">
               <div class="card-header-d">
                 <div class="card-title-d align-self-center">
-                  <h3 class="title-d">
+                  <h3 class="title-d text-capitalize">
                     <a href="{% url 'agent' agent.id %}" class="link-two">{{agent.name}}
                       </a>
                   </h3>
@@ -81,13 +81,13 @@
                       </a>
                     </li>
                     <li class="list-inline-item">
-                      <a href="{{agent.pinterest}}" class="link-one">
-                        <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                      <a href="{{agent.google_plus}}" class="link-one">
+                        <i class="fa fa-google-plus" aria-hidden="true"></i>
                       </a>
                     </li>
                     <li class="list-inline-item">
-                      <a href="{{agent.dribble}}" class="link-one">
-                        <i class="fa fa-dribbble" aria-hidden="true"></i>
+                      <a href="{{agent.linkedin}}" class="link-one">
+                        <i class="fa fa-linkedin" aria-hidden="true"></i>
                       </a>
                     </li>
                   </ul>
@@ -99,13 +99,14 @@
     {% endfor %}
   {% else %}
   <div class="col-md-12">
-    <h1>
-      No Agents Available
+    <h1 style="font-family: krinkes_regular_personal_usRg; color:#000000" class="text-capitalize">
+      no agents available at the moment. please checkIn latter.
     </h1>
   </div>
   {% endif %}
+
       </div>
-      <div class="row">
+      <div class="row pull-right">
         <div class="col-md-12">
           {% if agents.has_other_pages %}
           <ul class="pagination">
@@ -147,6 +148,24 @@
       </div>
     </div>
   </section>
+{% else %}
+  <div class="col-md-12 text-capitalize">
+    <div class="container">
+      <div class="row">
+        <p style="font-size: 30px;">We share delicate infomation on our agents like, 
+          contact credentials and address. by so doing for any
+          one to have access to these information they must be 
+          <span><a href="{% url 'register' %}" style="color: rgb(7, 148, 61);font-family:krinkes_decor_personal_useRg"> 
+          Registered</a>
+          and</span><span><a href="{% url 'login' %}" style="color: rgb(7, 148, 61);font-family:krinkes_decor_personal_useRg"> loggedIn</a> 
+          our services. This is to keep track of customers interactions and to avoid 
+          uneccessary harasments from unserious internotes. Thanks for understanding.</span>
+          </p>
+      </div>
+    </div>
+  </div>
+  <br>
+{% endif %}
   <!--/ Agents Grid End /-->
 
 {% endblock %}

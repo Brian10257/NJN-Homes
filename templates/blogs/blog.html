@@ -5,12 +5,12 @@
 {% block content %}
 
 <!--/ Intro Single star /-->
-<section class="intro-single">
+<section class="intro-single text-capitalize">
     <div class="container">
       <div class="row">
         <div class="col-md-12 col-lg-8">
           <div class="title-single-box">
-            <h1 class="title-single">{{blog.title}}</h1>
+            <h1 class="title-single" style="font-family: krinkes_decor_personal_useRg; color:#000000">{{blog.title}}</h1>
             <span class="color-text-a">{{blog.sub_title}}.</span>
           </div>
         </div>
@@ -32,7 +32,7 @@
   <!--/ Intro Single End /-->
 
   <!--/ News Single Star /-->
-  <section class="news-single nav-arrow-b">
+  <section class="news-single nav-arrow-b text-capitalize">
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
@@ -73,26 +73,26 @@
           </div>
           <div class="post-footer">
             <div class="post-share">
-              <span>Share: </span>
+              <span style="font-size: 30px; font-weight:700">Share: </span>
               <ul class="list-inline socials">
                 <li class="list-inline-item">
                   <a href="{{blog.facebook}}">
-                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                    <i class="fa fa-facebook" style="color:#191cb4; font-size: 20px" aria-hidden="true"></i>
                   </a>
                 </li>
                 <li class="list-inline-item">
                   <a href="{{blog.twitter}}">
-                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                    <i class="fa fa-twitter" style="color:#168ca1; font-size: 20px"  aria-hidden="true"></i>
                   </a>
                 </li>
                 <li class="list-inline-item">
                   <a href="{{blog.instagram}}">
-                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                    <i class="fa fa-instagram" style="color:#d44f27; font-size: 20px" aria-hidden="true"></i>
                   </a>
                 </li>
                 <li class="list-inline-item">
                   <a href="{{blog.pinterest}}">
-                    <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                    <i class="fa fa-pinterest-p" style="color:#c20000; font-size: 20px" aria-hidden="true"></i>
                   </a>
                 </li>
               </ul>
@@ -101,7 +101,7 @@
         </div>
         <div class="col-md-10 offset-md-1 col-lg-10 offset-lg-1">
           <div class="title-box-d">
-            <h3 class="title-d">Comments</h3>
+            <h3 class="title-d" style="font-family: krinkes_decor_personal_useRg; color:#000000"><u>Comments</u></h3>
           </div>
           <div class="box-comments container">
           {% if blogs %}
@@ -125,7 +125,7 @@
           </div>
           <div class="form-comments">
             <div class="title-box-d">
-              <h3 class="title-d"> Leave a Reply</h3>
+              <h3 class="title-d" style="font-family: krinkes_regular_personal_usRg; color:#000000"><u>Leave a Comment</u></h3>
             </div>
             <form action="{% url 'blog' blog.id %}" method="POST" class="form-a" enctype="multipart/form-data">
               {% csrf_token %}
@@ -139,7 +139,7 @@
                       <div class="form-group">
                         <input type="file" name="image" accept=".jpg, .jpeg, .png" id="image" style="font-size: 10px;" aria-required="false" required>
                       </div>
-                    </div>
+                  </div>
                 <div class="col-md-6 mb-3">
                   <div class="form-group">
                     <label for="inputName">Name</label>
@@ -166,9 +166,15 @@
                     <textarea id="textMessage" class="form-control" placeholder="Comment *" cols="45" rows="8" name="comment"  required></textarea>
                   </div>
                 </div>
+                {% if user.is_authenticated %}
                 <div class="col-md-12">
-                  <button type="submit" class="form-submit">Send Message</button>
+                  <button type="submit" class="form-submit">Post</button>
                 </div>
+                {% else %}
+                <div class="col-md-12">
+                  <h3><a href="{% url 'login' %}"><span style="font-family: krinkes_decor_personal_useRg; color:#127709 ">Login</span></a> To Leave A Comment</h3>
+                </div>
+                {% endif %}
               </div>
             </form>
           </div>

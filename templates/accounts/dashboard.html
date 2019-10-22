@@ -9,7 +9,7 @@
           {% include 'partials/_alerts.html' %}
           <div class="row text-center">
             <div class="col-md-12">
-              <h1 class="display-4" style="color:#199908;">My Dashboard</h1>
+              <h1 class="display-4" style="font-family: krinkes_decor_personal_useRg; color:#1a7712">My Dashboard</h1>
               <p class="lead">NJN HOMES Real Estate Manager</p>
             </div>
           </div>
@@ -53,7 +53,7 @@
                         <td>{{ contact.id }}</td>
                         <td>{{ contact.property_single }}</td>
                         <td>
-                          <a class="btn btn-light" href=" {% url 'property_single' contact.property_single_id %} ">Review Property</a>
+                          <a class="btn btn-light" href=" {% url 'property_single' contact.property_single_id %}" style="font-family: krinkes_regular_personal_usRg; color:#000000">Review Property</a>
                         </td>
                       </tr> 
                     {% endfor %}                                     

@@ -1,4 +1,4 @@
-{% load static %}
+{% load staticfiles %}
 <!--/ Nav Star /-->
 <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
     <div class="container">
@@ -8,10 +8,12 @@
         <span></span>
         <span></span>
       </button>
-      <!-- Favicon -->
-      <link rel="icon" href="{% static 'img/njn.png'%}">
-      <div>
-      <a class="navbar-brand text-brand" href="{% url 'index' %}"><img src="static/img/njn.png"></a>
+    <div>
+      <a class="navbar-brand" href="{% url 'index' %}">
+        <div class="logo-image">
+            <img src="/static/img/njn.png" class="image-fluid">
+        </div>
+      </a>
     </div>
       <button type="button" class="btn btn-link nav-search navbar-toggle-box-collapse d-md-none" data-toggle="collapse"
         data-target="#navbarTogglerDemo01" aria-expanded="false">
@@ -95,7 +97,7 @@
             >
             <a class="nav-link" href="{% url 'login' %}">
             <i class="fas fa-sign-in-alt"></i>
-                Login</a>
+              Login</a>
             </li>
         {% endif %}
         </ul>

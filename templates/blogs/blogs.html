@@ -5,7 +5,7 @@
 {% block content %}
 
 <!--/ Intro Single star /-->
-<section class="intro-single">
+<section class="intro-single text-capitalize">
     <div class="container">
       <div class="row">
         <div class="col-md-12 col-lg-8">
@@ -32,7 +32,7 @@
   <!--/ Intro Single End /-->
 
   <!--/ News Grid Star /-->
-  <section class="news-grid grid">
+  <section class="news-grid grid text-capitalize">
     <div class="container">
       <div class="row">
   {% if blogs %}
@@ -49,7 +49,7 @@
                 </div>
                 <div class="card-title-b">
                   <h2 class="title-2">
-                    <a href="{% url 'blog' blog.id %}">{{blog.title}}
+                    <a href="{% url 'blog' blog.id %}">{{blog.sub_title}}
                       </a>
                   </h2>
                 </div>
@@ -63,13 +63,13 @@
     {% endfor %}
   {% else %}
   <div class="col-md-12">
-    <h1>
-      No News Available
+    <h1 style="font-family: krinkes_regular_personal_usRg; color:#000000" class="text-capitalize">
+      No Posts Available At The Moment. Please Check In Later.
     </h1>
   </div>
   {% endif %}
       </div>
-      <div class="row">
+      <div class="row pull-right">
           <div class="col-md-12">
             {% if blogs.has_other_pages %}
             <ul class="pagination">

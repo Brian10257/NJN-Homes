@@ -4,14 +4,14 @@
 {% block title %} {{property_single.title}} {{property_single.city}} {% endblock %}
 {% block content %}
 <!--/ Intro Single star /-->
-<section class="intro-single">
+<section class="intro-single text-capitalize">
   <div class="container">
       <!-- Alerts  -->
       {% include 'partials/_alerts.html' %}
     <div class="row">
       <div class="col-md-12 col-lg-8">
         <div class="title-single-box">
-          <h1 class="title-single">{{property_single.city}}</h1>
+          <h1 class="title-single" style="font-family: krinkes_decor_personal_useRg; color:#000000">{{property_single.city}}</h1>
           <span class="color-text-a">{{property_single.address}}</span>
         </div>
       </div>
@@ -36,7 +36,7 @@
 <!--/ Intro Single End /-->
 
 <!--/ Property Single Star /-->
-<section class="property-single nav-arrow-b">
+<section class="property-single nav-arrow-b text-capitalize">
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
@@ -81,7 +81,7 @@
               <div class="card-header-c d-flex">
                 <div class="card-title-c align-self-center">
                   <h2 class="title-c">Price:</h2>
-                  <h5 class="title-c">{{property_single.price}}</h5>
+                  <h5 class="title-c">$ {{property_single.price}}</h5>
                 </div>
               </div>
             </div>
@@ -89,7 +89,7 @@
               <div class="row">
                 <div class="col-sm-12">
                   <div class="title-box-d section-t4">
-                    <h3 class="text-bold title-d">Quick Summary</h3>
+                    <h3 class="text-bold title-d" style="font-family: krinkes_regular_personal_usRg; color:#000000">Quick Summary</h3>
                   </div>
                 </div>
               </div>
@@ -137,7 +137,7 @@
             <div class="row">
               <div class="col-sm-12">
                 <div class="title-box-d">
-                  <h3 class="title-d">Property Description</h3>
+                  <h3 class="title-d" style="font-family: krinkes_regular_personal_usRg; color:#000000">Property Description</h3>
                 </div>
               </div>
             </div>
@@ -152,11 +152,11 @@
             <div class="row section-t3">
               <div class="col-sm-12">
                 <div class="title-box-d">
-                  <h3 class="title-d">Amenities</h3>
+                  <h3 class="title-d" style="font-family: krinkes_regular_personal_usRg; color:#000000">Amenities</h3>
                 </div>
               </div>
             </div>
-            <div class="amenities-list color-text-a">
+            <div class="amenities-list color-text-a text-capitalize">
               <ul class="list-a no-margin">
                 <li>{{property_single.amenity1}}</li>
                 <li>{{property_single.amenity2}}</li>
@@ -172,20 +172,21 @@
           </div>
         </div>
       </div>
-      <div class="col-md-12">
+      <div class="col-md-12 text-capitalize">
         <div class="row section-t3">
           <div class="col-sm-12">
             <div class="title-box-d">
-              <h3 class="title-d">Contact Agent</h3>
+              <h3 class="title-d" style="font-family: krinkes_decor_personal_useRg; color:#000000">Contact Agent</h3>
             </div>
           </div>
         </div>
+    {% if user.is_authenticated %}
         <div class="row">
           <div class="col-md-6 col-lg-4">
             <img src="{{property_single.agent.photo.url}}" alt="" class="img-fluid">
           </div>
           <div class="col-md-6 col-lg-4">
-            <div class="property-agent">
+            <div class="property-agent text-capitalize">
               <h4 class="title-agent">{{property_single.agent.name}}</h4>
               <p class="color-text-a">
                   {{property_single.agent.description}}
@@ -204,33 +205,47 @@
                 <ul class="list-inline">
                   <li class="list-inline-item">
                     <a href="{{property_single.agent.facebook}}">
-                      <i class="fa fa-facebook" aria-hidden="true"></i>
+                      <i class="fa fa-facebook" style="color:#191cb4; font-size: 30px"  aria-hidden="true"></i>
                     </a>
                   </li>
                   <li class="list-inline-item">
                     <a href="{{property_single.agent.twitter}}">
-                      <i class="fa fa-twitter" aria-hidden="true"></i>
+                      <i class="fa fa-twitter" style="color:#168ca1; font-size: 30px" aria-hidden="true"></i>
                     </a>
                   </li>
                   <li class="list-inline-item">
                     <a href="{{property_single.agent.instagram}}">
-                      <i class="fa fa-instagram" aria-hidden="true"></i>
+                      <i class="fa fa-instagram" style="color:#d44f27; font-size: 30px" aria-hidden="true"></i>
                     </a>
                   </li>
                   <li class="list-inline-item">
-                    <a href="{{property_single.agent.pinterest}}">
-                      <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                    <a href="{{property_single.agent.google_plus}}">
+                      <i class="fa fa-google-plus" style="color:#c20000; font-size: 30px" aria-hidden="true"></i>
                     </a>
                   </li>
                   <li class="list-inline-item">
-                    <a href="{{property_single.agent.dribbble}}">
-                      <i class="fa fa-dribbble" aria-hidden="true"></i>
+                    <a href="{{property_single.agent.linkedin}}">
+                      <i class="fa fa-linkedin" style="color:#191cb4; font-size: 30px" aria-hidden="true"></i>
                     </a>
                   </li>
                 </ul>
               </div>
             </div>
           </div>
+    {% else %}
+    <div class="col-md-12 text-capitalize">
+      <div class="container">
+        <div class="row">
+          <p class="text-capitalize" style="font-size: 20px;">
+            you can send us property inquiry message even when not loggedIn, 
+            but you can't view personal information on our agents when not <span>
+            <a href="{% url 'register' %}" style="color: rgb(7, 148, 61);font-family:krinkes_decor_personal_useRg">Registered</a> 
+            or</span> <span><a href="{% url 'login' %}" style="color: rgb(7, 148, 61);font-family:krinkes_decor_personal_useRg"> loggedIn</a></span>
+          </p>
+        </div>
+      </div>
+    </div>
+    {% endif %}
           <div class="col-md-12 col-lg-4">
             <div class="property-contact"> 
               <form action="{% url 'contact' %}" method="POST">
@@ -272,7 +287,7 @@
                     </div>
                   </div>
                   <div class="col-md-12">
-                    <button type="submit" class="form-submit">Send Message</button>
+                    <button type="submit" class="form-submit">Send</button>
                   </div>
                 </div>
               </form>

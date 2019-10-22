@@ -12,7 +12,7 @@
                 <!--Alerts-->
                 {% include 'partials/_alerts.html' %}
                 <form method="POST" id="signup-form" class="signup-form">
-                    <h2 class="form-title">Create account</h2>
+                    <h2 class="form-title" style="font-family: krinkes_regular_personal_usRg; color:#000000">Register</h2>
                     {% csrf_token %}
                     <div class="form-group">
                         <input type="text" class="form-input" name="first_name" id="first_name" placeholder="First Name"/>
@@ -33,16 +33,14 @@
                     <div class="form-group">
                         <input type="password" class="form-input" name="password2" id="re_password" placeholder="Repeat your password"/>
                     </div>
-                    <div class="form-group">
-                        <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
-                        <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
-                    </div>
+                    <br>
+                    <br>
                     <div class="form-group">
                         <input type="submit" value="register" class="form-submit" value="Sign up"/>
                     </div>
                 </form>
-                <p class="loginhere">
-                    Have already an account ? <a href="{% url 'login' %}" class="loginhere-link">Login here</a>
+                <p class="loginhere text-capitalize">
+                    already have an account ? click here to <a href="{% url 'login' %}" style="font-family: krinkes_regular_personal_usRg; font-size: 25px;">Login</a>
                 </p>
             </div>
         </div>

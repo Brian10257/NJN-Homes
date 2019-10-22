@@ -1,0 +1,14 @@
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Aclonica" />
+{%extends 'admin/base.html'%}
+{%load static%}
+{%block title%}NJN HOMES Admin{% endblock %}
+{%block branding %}
+    <h1 id="head">
+        <div class="academy-logo">
+            <a href="{%url 'index'%}"><img src="{% static 'img/njn.png'%}"  alt="NJN HOMES WEB ADMINISTRATOR"></a>
+        </div>
+    </h1>
+    {% endblock %}
+    {%block extrastyle%}
+    <link rel="stylesheet" href="{%static 'css/admin.css' %}">
+    {%endblock%}  

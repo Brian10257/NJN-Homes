@@ -26,7 +26,7 @@ def contact(request):
         contact = Contact(property_single=property_single, property_single_id=property_single_id, name=name, email=email, phone=phone, message=message, user_id=user_id)
         contact.save()
 
-        # Send Mail
+        # Send Mail 
         send_mail(
             'Inquiry On Listed Property',
             'There has been an inquiry for '+ property_single + '. Sign into admin panel for more info',

@@ -5,13 +5,13 @@
 {% block content %}
 
 <!--/ Intro Single star /-->
-<section class="intro-single">
+<section class="intro-single text-capitalize">
     <div class="container">
       <div class="row">
         <div class="col-md-12 col-lg-8">
           <div class="title-single-box">
             <h1 class="title-single">{{agent.name}}</h1>
-            <span class="color-text-a">{{agent.role}}</span> 
+            <span class="color-text-a" style="font-size: 30px; font-weight:900; color:#059e40"><span style="font-weight: 100; color:black"> Position:</span> <u>{{agent.role}}</u></span> 
           </div>
         </div>
         <div class="col-md-12 col-lg-4">
@@ -21,7 +21,7 @@
                 <a href="{% url 'index' %}">Home</a>
               </li>
               <li class="breadcrumb-item">  
-                <a href="{% url 'agent' agent.id %}">Agent</a>
+                <a>Agent</a>
               </li>
               <li class="breadcrumb-item active" aria-current="page">
                 {{agent.name}}
@@ -35,7 +35,7 @@
   <!--/ Intro Single End /-->
 
   <!--/ Agent Single Star /-->
-  <section class="agent-single">
+  <section class="agent-single text-capitalize">
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
@@ -72,27 +72,27 @@
                   <ul class="list-inline">
                     <li class="list-inline-item">
                       <a href="{{agent.facebook}}" class="link-one">
-                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                        <i class="fa fa-facebook" style="color:#191cb4; font-size: 30px" aria-hidden="true"></i>
                       </a>
                     </li>
                     <li class="list-inline-item">
                       <a href="{{agent.twitter}}" class="link-one">
-                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                        <i class="fa fa-twitter" style="color:#168ca1; font-size: 30px" aria-hidden="true"></i>
                       </a>
                     </li>
                     <li class="list-inline-item">
                       <a href="{{agent.instagram}}" class="link-one">
-                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                        <i class="fa fa-instagram" style="color:#d44f27; font-size: 30px" aria-hidden="true"></i>
                       </a>
                     </li>
                     <li class="list-inline-item">
-                      <a href="{{agent.pinterest}}" class="link-one">
-                        <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                      <a href="{{agent.google_plus}}" class="link-one">
+                        <i class="fa fa-google-plus" style="color:#c20000; font-size: 30px"  aria-hidden="true"></i>
                       </a>
                     </li>
                     <li class="list-inline-item">
-                      <a href="{{agent.dribble}}" class="link-one">
-                        <i class="fa fa-dribbble" aria-hidden="true"></i>
+                      <a href="{{agent.linkedin}}" class="link-one">
+                        <i class="fa fa-linkedin" style="color:#9b4141; font-size: 30px" aria-hidden="true"></i>
                       </a>
                     </li>
                   </ul>
@@ -105,5 +105,4 @@
     </div>
   </section>
   <!--/ Agent Single End /-->
-
 {% endblock %}

@@ -3,22 +3,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Aclonica" />
   <meta charset="utf-8">
   <title>NJN HOMES |  {% block title %} {% endblock %}</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta content="" name="keywords">
   <meta content="" name="description">
-
+  <!-- Special Fonts -->
+  <link rel="stylesheet" type="text/css" href="{% static 'fonts/krinkes_regular/stylesheet.css'%}">
+  <link rel="stylesheet" type="text/css" href="{% static 'fonts/taken_by_vultures/stylesheet.css'%}">
   <!-- Favicons -->
-  <link href="{% static 'img/favicon.png'%}" rel="icon">
-  <link href="{% static 'img/apple-touch-icon.png'%}" rel="apple-touch-icon">
-
+  <link rel="icon" href="{% static 'img/njn.png'%}">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
 
+  
   <!-- Bootstrap CSS File -->
-  <link href="{% static 'lib/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{% static 'lib/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
 
+    <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet" />
+    <!-- IONICON STYLE SHEET FOR BEAUTIFUL ICONS -->
+    <link href="{% static 'css/ionicons.css'%}" rel="stylesheet" />
+    <!-- STYLE FOR OPENING IMAGE IN POPUP USING FANCYBOX-->
+    <link href="{% static 'js/source/jquery.fancybox.css'%}" rel="stylesheet" />
+    
   <!-- Libraries CSS Files -->
   <link href="{% static 'lib/font-awesome/css/font-awesome.min.css'%}" rel="stylesheet">
   <link href="{% static 'lib/animate/animate.min.css'%}" rel="stylesheet">
@@ -27,16 +38,17 @@
 
   <!-- Main Stylesheet File -->
   <link href="{% static 'css/style.css'%}" rel="stylesheet">
+  
 
 </head>
 
-<body>
+<body data-spy="scroll" data-target=".navbar-fixed-top">
 
-  <div class="click-closed"></div>
+  <div class="click-closed"></div>   
   <!--/ Form Search Star /-->
   <div class="box-collapse">
     <div class="title-box-d">
-      <h3 class="title-d">Search Property</h3>
+      <h3 class="title-d" style="font-family: krinkes_decor_personal_useRg; color:#000000">Search Property</h3>
     </div>
     <span class="close-box-collapse right-boxed ion-ios-close"></span>
     <div class="box-collapse-wrap form">
@@ -111,7 +123,7 @@
               </select>
             </div>
           </div>
-          <div class="col-md-12">
+          <div class="col-md-12" style="font-family: krinkes_regular_personal_usRg; color:#000000">
             <button type="submit" class="btn btn-b">Search Property</button>
           </div>
         </div>
@@ -147,6 +159,20 @@
 
   <!-- Template Main Javascript File -->
   <script src="{% static 'js/main.js'%}"></script>
+
+  <script src="{%static 'js/jquery-1.11.1.js'%}"></script>
+    <!-- BOOTSTRAP SCRIPTS  -->
+    <script src="{%static 'js/bootstrap.js'%}"></script>
+    <!-- SCROLLING SCRIPTS PLUGIN  -->
+    <script src="{%static 'js/jquery.easing.min.js'%}"></script>
+    <!--  FANCYBOX PLUGIN -->
+    <script src="{%static 'js/source/jquery.fancybox.js'%}"></script>
+    <!-- ISOTOPE SCRIPTS -->
+    <script src="{%static 'js/jquery.isotope.js'%}"></script>
+     <!-- SCROLL ANIMATIONS  -->
+    <script src="{%static 'js/scrollReveal.js'%}"></script>
+    <!-- CUSTOM SCRIPTS   -->
+    <script src="{%static 'js/custom.js'%}"></script>
 
 </body>
 </html>

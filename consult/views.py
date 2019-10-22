@@ -18,8 +18,8 @@ def consult(request):
 
         # Send Mail
         send_mail(
-            'Inquiry On Listed Property',
-            'A Message Has Been Recieve From NJN Websit. Sign into admin panel for more info',
+            'Message Recieved From NJN Homes User Acount.',
+            'A Message Has Been Recieve From NJN Websits. Sign into admin panel for more info',
             'ntschangb@gmail.com', 
             ['ntschanb@yahoo.com', 'ntschangb@gmail.com'],
             fail_silently=False

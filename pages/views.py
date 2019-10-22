@@ -32,3 +32,6 @@ def index(request):
     
 
     return render (request, 'pages/index.html', context )
+
+def policy(request):
+    return render(request, 'pages/policy.html')

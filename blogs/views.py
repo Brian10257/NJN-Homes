@@ -16,7 +16,7 @@ def blogs(request):
         'state_choices': state_choices,
         'bedroom_choices': bedroom_choices, 
         'bathroom_choices': bathroom_choices,
-        'garage_choices': garage_choices,
+        'garage_choices': garage_choices, 
         'price_choices': price_choices
     }
 

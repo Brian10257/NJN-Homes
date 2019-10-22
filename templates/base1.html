@@ -1,0 +1,375 @@
+{% load static %}
+{% load humanize %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+  <meta charset="utf-8">
+  <title>NJN HOMES |  {% block title %} {% endblock %}</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+  <!-- Special Fonts -->
+  <link rel="stylesheet" type="text/css" href="{% static 'fonts/krinkes_regular/stylesheet.css'%}">
+  <link rel="stylesheet" type="text/css" href="{% static 'fonts/taken_by_vultures/stylesheet.css'%}">
+  <!-- Favicons -->
+  <link rel="icon" href="{% static 'img/njn.png'%}">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+  
+  <!-- Bootstrap CSS File -->
+    <link href="{% static 'lib/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+
+    <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet" />
+    <!-- IONICON STYLE SHEET FOR BEAUTIFUL ICONS -->
+    <link href="{% static 'css/ionicons.css'%}" rel="stylesheet" />
+    <!-- STYLE FOR OPENING IMAGE IN POPUP USING FANCYBOX-->
+    <link href="{% static 'js/source/jquery.fancybox.css'%}" rel="stylesheet" />
+    <link href="{% static 'css/style.css'%}" rel="stylesheet">
+  <!-- Libraries CSS Files -->
+  <link href="{% static 'lib/font-awesome/css/font-awesome.min.css'%}" rel="stylesheet">
+  <link href="{% static 'lib/animate/animate.min.css'%}" rel="stylesheet">
+  <link href="{% static 'lib/ionicons/css/ionicons.min.css'%}" rel="stylesheet">
+  <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
+
+  <!-- Style & Common Css --> 
+  <link rel="stylesheet" href="{% static 'css/common.css'%}">
+  <!-- Main Stylesheet File -->
+  <link href="{% static 'css/main.css'%}" rel="stylesheet">
+
+</head>
+
+<body data-spy="scroll" data-target=".navbar-fixed-top">
+
+  <div class="click-closed"></div>
+  <!--/ Form Search Star /-->
+  <div class="box-collapse">
+    <div class="title-box-d">
+      <h3 class="title-d" style="font-family: krinkes_decor_personal_useRg; color:#000000; font-size:30px;">Search Property</h3>
+    </div>
+    <span class="close-box-collapse right-boxed ion-ios-close"></span>
+    <div class="box-collapse-wrap form">
+        <br>
+      <form action="{% url 'search' %}" class="form-a">
+        <div class="row">
+          <div class="col-md-12 mb-2">
+            <div class="form-group">
+              <h6 for="Type">Keyword</h6>
+              <input type="text" name="keywords" class="form-control form-control-lg form-control-a"  placeholder="Keyword (Garage, Pool etc)"
+              value ="{{values.keywords}}">
+            </div>
+          </div>
+          <div class="col-md-6 mb-2">
+            <div class="form-group">
+              <label for="Type" style="font-size: 15px;" class="text-weight-light">State</label>
+              <select class="form-control form-control-lg form-control-a" name="state" id="Type">
+                  <option selected="true" disabled="disabled">State (Any)</option>
+                  {% for key,value in state_choices.items %}
+                        <option value="{{key}}">{{value}}</option>
+                  {% endfor %}
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6 mb-2">
+            <div class="form-group">
+              <label for="city">City</label>
+              <input class="form-control form-control-lg form-control-a" name="city" id="city" placeholder="City"
+              value = "{{ values.city }}">
+            </div>
+          </div>
+          <div class="col-md-6 mb-2">
+            <div class="form-group">
+              <label for="bedrooms">Bedrooms</label>
+              <select class="form-control form-control-lg form-control-a" name="bedrooms" id="bedrooms">
+                  <option selected="true" disabled="disabled">Any</option>
+                  {% for key,value in bedroom_choices.items %}
+                        <option value="{{ key }}">{{ value }}</option>
+                  {% endfor %}
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6 mb-2">
+            <div class="form-group">
+              <label for="garages">Garage</label>
+              <select class="form-control form-control-lg form-control-a" name="garage" id="garages">
+                  <option selected="true" disabled="disabled">Any</option>
+                  {% for key,value in garage_choices.items %}
+                      <option value="{{ key }}">{{ value }}</option>
+                  {% endfor %}
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6 mb-2">
+            <div class="form-group">
+              <label for="bathrooms">Bathrooms</label>
+              <select class="form-control form-control-lg form-control-b" name="bathrooms" id="bathrooms">
+                  <option selected="true" disabled="disabled">Any</option>
+                  {% for key,value in bathroom_choices.items %}
+                      <option value="{{ key }}">{{ value }}</option>
+                  {% endfor %}
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6 mb-2">
+            <div class="form-group">
+              <label for="price">Min Price</label>
+              <select class="form-control form-control-lg form-control-a" name="price" id="price">
+                <option selected="true" disabled="disabled">Max Price (Any)</option>
+                  {% for key,value in price_choices.items %}
+                    <option value="{{ key }}">{{ value }}</option>
+                  {% endfor %}
+              </select>
+            </div>
+          </div>
+          <div class="col-md-12" style="font-family: krinkes_regular_personal_usRg; color:#000000">
+            <button type="submit" class="btn btn-b">Search Property</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!--/ Form Search End /-->
+
+  <!-- Nav bar -->
+  {% load staticfiles %}
+<!--/ Nav Star /-->
+<nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
+    <div class="container">
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
+        aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    <div>
+      <a class="navbar-brand" href="{% url 'index' %}">
+        <div class="logo-image">
+            <img src="/static/img/njn.png" width="100px" height="100px" class="image-fluid">
+        </div>
+      </a>
+    </div>
+      <button type="button" class="btn btn-link nav-search navbar-toggle-box-collapse d-md-none" data-toggle="collapse"
+        data-target="#navbarTogglerDemo01" aria-expanded="false">
+        <span class="fa fa-search" aria-hidden="true"></span>
+      </button>
+      <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
+        <ul class="navbar-nav">
+          <li 
+        {% if '/' == request.path %}
+          class="nav-item active mr-3"
+        {% else %}
+          class="nav-item mr-3"
+        {% endif %} 
+          >
+            <a class="nav-link" style="font-size: 18px;" href="{% url 'index' %}">Home</a>
+          </li>
+          <li
+          {% if 'about' in request.path %}
+            class="nav-item active mr-3"
+          {% else %}
+            class="nav-item mr-3"
+          {% endif %} 
+            >
+            <a class="nav-link" style="font-size: 18px;" href="{% url 'about' %}">About</a>
+          </li>
+          <li
+          {% if 'properties' in request.path %}
+            class="nav-item active mr-3"
+          {% else %}
+            class="nav-item mr-3"
+          {% endif %}>
+            <a class="nav-link" style="font-size: 18px;" href="{% url 'properties' %}">Property</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" style="font-size: 18px;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Pages
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" style="font-size: 18px;" href="{% url 'agents' %}">Agents Grid</a>
+              <a class="dropdown-item" style="font-size: 18px;" href="{% url 'blogs' %}">Blog</a>
+            </div>
+          </li>
+        {% if user.is_authenticated %}
+          <li 
+          {% if 'dashboard' in request.path %}
+            class="nav-item active mr-3"
+          {% else %}
+            class="nav-item mr-3"
+          {% endif %} >
+            <a class="nav-link" style="font-size: 18px;" href="{% url 'dashboard' %}">
+                Welcome {{user.username}} (Dashboard)
+            </a>
+          </li>
+          <li class="nav-item mr-3">
+            <a href="javascript:{document.getElementById('logout').submit()}" class="nav-link">
+              <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+            <form action="{% url 'logout' %}" method="POST" id="logout">
+              {% csrf_token %}
+              <input type= "hidden">
+            </form>
+          </li>
+        {% else %}
+          <li 
+          {% if 'register' in request.path %}
+              class="nav-item active mr-3"
+          {% else %}
+              class="nav-item mr-3"
+          {% endif %} 
+          >
+            <a class="nav-link" style="font-size: 18px;" href="{% url 'register' %}">
+              <i class="fas fa-user-plus"></i> Register</a>
+          </li>
+          <li 
+            {% if 'login' in request.path %}
+              class="nav-item active mr-3"
+            {% else %}
+              class="nav-item mr-3"
+            {% endif %} 
+            >
+            <a class="nav-link" style="font-size: 18px;" href="{% url 'login' %}">
+            <i class="fas fa-sign-in-alt"></i>
+                Login</a>
+            </li>
+        {% endif %}
+        </ul>
+      </div>
+      <button type="button" class="btn btn-b-n navbar-toggle-box-collapse d-none d-md-block" data-toggle="collapse"
+        data-target="#navbarTogglerDemo01" aria-expanded="false">
+        <span class="fa fa-search" style="font-size: 20px;" aria-hidden="true"></span>
+      </button>
+    </div>
+  </nav>
+  <!--/ Nav End /-->
+  
+  <!-- Main Content -->
+  {% block content %}
+  {% endblock %}
+  
+  
+      
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <nav class="nav-footer">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <a href="{% url 'index' %}" style="color:#000000; font-size: 18px">Home</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="{% url 'about' %}" style="color:#000000; font-size: 18px">About</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="{% url 'properties' %}" style="color:#000000; font-size: 18px">Property</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="{% url 'blogs' %}" style="color:#000000; font-size: 18px">Blog</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="{% url 'consult' %}" style="color:#000000; font-size: 18px">Contact</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="{% url 'services' %}" style="color:#000000; font-size: 18px">Services</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="{% url 'agents' %}" style="color:#000000; font-size: 18px">Agents</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="{% url 'carriers' %}" style="color:#000000; font-size: 18px">Carriers</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="{% url 'policy' %}" style="color:#000000; font-size: 18px">Privacy-Policy</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="socials-a">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fa fa-facebook" style="color:#191cb4; font-size: 30px" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fa fa-twitter" style="color:#168ca1; font-size: 30px" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fa fa-instagram" style="color:#d44f27; font-size: 30px" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fa fa-google-plus" style="color:#c20000; font-size: 30px" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fa fa-linkedin" style="color:#0c01a5; font-size: 30px" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="copyright-footer">
+          <p style="font-weight: bold;">
+             Contact Us At njnhomes@yahoo.com or with our phone numbers: <span>+(237) 677458625</span>
+          </p>
+        </div>
+        <div >
+          <h3>NJN HOMES</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!--/ Footer End /-->
+
+              
+<!-- ##### Footer Area End ##### -->
+     
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <div id="preloader"></div>
+
+    <script type="text/javascript" src="{%static 'js/jquery.min.js'%}"></script>
+    <script src="{%static 'js/bootstrap.min.js'%}"></script>
+    <script type="text/javascript" src="{%static 'js/owl.carousel.min.js'%}"></script>
+    <script src="{%static 'js/bootsnav.js'%}"></script>
+    <script src="{%static 'js/main1.js'%}"></script>
+    <!-- JavaScript Libraries -->
+  <script src="{% static 'lib/jquery/jquery.min.js'%}"></script>
+  <script src="{% static 'lib/jquery/jquery-migrate.min.js'%}"></script>
+  <script src="{% static 'lib/popper/popper.min.js'%}"></script>
+  <script src="{% static 'lib/bootstrap/js/bootstrap.min.js'%}"></script>
+  <script src="{% static 'lib/easing/easing.min.js'%}"></script>
+  <script src="{% static 'lib/owlcarousel/owl.carousel.min.js'%}"></script>
+  <script src="{% static 'lib/scrollreveal/scrollreveal.min.js'%}"></script>
+  <!-- Contact Form JavaScript File -->
+  <script src="{% static 'contactform/contactform.js'%}"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="{% static 'js/main.js'%}"></script>
+
+  <script src="{%static 'js/jquery-1.11.1.js'%}"></script>
+    <!-- BOOTSTRAP SCRIPTS  -->
+    <script src="{%static 'js/bootstrap.js'%}"></script>
+    <!-- SCROLLING SCRIPTS PLUGIN  -->
+    <script src="{%static 'js/jquery.easing.min.js'%}"></script>
+    <!--  FANCYBOX PLUGIN -->
+    <script src="{%static 'js/source/jquery.fancybox.js'%}"></script>
+    <!-- ISOTOPE SCRIPTS -->
+    <script src="{%static 'js/jquery.isotope.js'%}"></script>
+     <!-- SCROLL ANIMATIONS  -->
+    <script src="{%static 'js/scrollReveal.js'%}"></script>
+    <!-- CUSTOM SCRIPTS   -->
+    <script src="{%static 'js/custom.js'%}"></script>
+
+
+</body>
+</html>

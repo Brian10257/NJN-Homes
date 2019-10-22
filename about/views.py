@@ -10,7 +10,7 @@ from .models import About
 
 def about(request): 
     about = About.objects.all()
-    
+
     # Get MVP 
     mvp_agents = Agent.objects.all().filter(is_mvp = True)
 

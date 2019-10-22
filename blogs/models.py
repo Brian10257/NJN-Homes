@@ -14,7 +14,8 @@ class Blog(models.Model):
     facebook = models.CharField(max_length = 50000, blank = True)
     twitter = models.CharField(max_length = 50000, blank = True)
     instagram = models.CharField(max_length = 50000, blank = True)
-    pinterest = models.CharField(max_length = 50000, blank = True)
+    google_plus = models.CharField(max_length = 50000, blank = True)
+    linkedin = models.CharField(max_length = 50000, blank = True)
     date_published = models.DateTimeField(default = datetime.now, blank = True)
     def __str__(self):
         return self.title

@@ -1,18 +1,20 @@
 {% extends 'base.html' %}
+
 {% load static %}
 {% load humanize %}
 {% block title %} About{% endblock %}
+
 {% block content %}
 
 <!--/ Intro Single star /-->
-<section class="intro-single">
+<section class="intro-single text-capitalize">
     <div class="container">
       <div class="row">
   {% if about %}
     {% for about in about %}
         <div class="col-md-12 col-lg-8 text-capitalize">
           <div class="title-single-box">
-            <h1 class="title-single">{{about.title}}</h1>
+            <h1 class="title-single" style="font-family: krinkes_decor_personal_useRg; color:#000000">{{about.title}}</h1>
           </div>
         </div>
         <div class="col-md-12 col-lg-4">
@@ -33,7 +35,7 @@
   <!--/ Intro Single End /-->
 
   <!--/ About Star /-->
-  <section class="section-about">
+  <section class="section-about text-capitalize">
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
@@ -41,9 +43,9 @@
             <img src="{{about.photo.url}}" alt="" class="img-fluid">
           </div>
           <div class="sinse-box">
-            <h3 class="sinse-title">NJN HOMES
+            <h3 class="sinse-title">NJN Homes
               <br> Since 2011</h3>
-            <p>HEAD OFFICE: Bamenda</p>
+            <p style="color:black; font-weight: 900; background-color: green">HEAD OFFICE: <span style="font-family: krinkes_regular_personal_usRg; color:#ffffff"> Bamenda</span></p>
           </div>
         </div>
         <div class="col-md-12 section-t8">
@@ -61,8 +63,8 @@
     {% endfor %}
   {% else %}
   <div class="col-md-12">
-    <h1>
-      No Info Available
+    <h1 style="font-family: krinkes_regular_personal_usRg; color:#000000">
+      No Infomation Available Yet. Please Check In Later.
     </h1>
   </div>
   {% endif %}
@@ -72,13 +74,13 @@
   <!--/ About End /-->
 
   <!--/ Team Star /-->
-  <section class="section-agents section-t8">
+  <section class="section-agents section-t8 text-capitalize">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
           <div class="title-wrap d-flex justify-content-between">
             <div class="title-box">
-              <h2 class="title-a">Meet Our Team</h2>
+              <h2 class="title-a" style="font-family: krinkes_decor_personal_useRg; color:#000000">Meet Our Team</h2>
             </div>
           </div>
         </div>
@@ -95,7 +97,7 @@
               <div class="card-header-d">
                 <div class="card-title-d align-self-center">
                   <h3 class="title-d">
-                    <a href="{% url 'agent' agent.id %}" class="link-two">{{agent.name}}
+                    <a href="{% url 'agent' agent.id %}" class="link-two text-capitalize">{{agent.name}}
                     </a>
                   </h3>
                 </div>

@@ -1,18 +1,23 @@
 from django.contrib import admin
-from django.urls import path, include
 from django.conf import settings
+from django.urls import path, include
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', include('django.contrib.auth.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('', include('pages.urls')),
-    path('', include('properties.urls')),
-    path('', include('contacts.urls')),
-    path('', include('consult.urls')),
-    path('', include('accounts.urls')),
-    path('', include('blogs.urls')),
-    path('', include('agents.urls')),
-    path('', include('about.urls')),
+    path('listings/', include('properties.urls')),
+    path('Property_inquiry/', include('contacts.urls')),
+    path('contact/', include('consult.urls')),
+    path('account/', include('accounts.urls')),
+    path('services/', include('services.urls')),
+    path('carriers/', include('carriers.urls')),
+    path('blogs/', include('blogs.urls')),
+    path('agents/', include('agents.urls')),
+    path('about/', include('about.urls')),
     path('admin/', admin.site.urls),
-]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
  

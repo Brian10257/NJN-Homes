@@ -11,8 +11,8 @@ class Agent(models.Model):
     facebook = models.CharField(max_length = 50000, blank = True)
     twitter = models.CharField(max_length = 50000, blank = True)
     instagram = models.CharField(max_length = 50000, blank = True)
-    pinterest = models.CharField(max_length = 50000, blank = True)
-    dribbble = models.CharField(max_length = 50000, blank = True)
+    google_plus = models.CharField(max_length = 50000, blank = True)
+    linkedin = models.CharField(max_length = 50000, blank = True)
     is_mvp = models.BooleanField(default = False)
     hire_date = models.DateTimeField(default = datetime.now, blank = True)
     def __str__(self):

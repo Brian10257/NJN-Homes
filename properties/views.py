@@ -22,6 +22,7 @@ def properties(request):
     }
 
     return render(request, 'properties/properties.html', context)
+
  
 def property_single(request, property_single_id):
     property_single = get_object_or_404(Property_single, pk= property_single_id) 
@@ -54,9 +55,11 @@ def search(request):
                                                  Q(amenity4__icontains=keywords)|
                                                  Q(amenity5__icontains=keywords)|
                                                  Q(amenity6__icontains=keywords)|
-                                                 Q(amenity7__icontains=keywords)|
+                                                 Q(amenity7__icontains=keywords)| 
                                                  Q(amenity8__icontains=keywords)| 
-                                                 Q(amenity9__icontains=keywords)) 
+                                                 Q(amenity9__icontains=keywords)|
+                                                 Q(price__icontains=keywords)|
+                                                 Q(area__icontains=keywords)) 
                                                 
         
     # City
