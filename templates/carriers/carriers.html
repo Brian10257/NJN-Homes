@@ -9,7 +9,7 @@
 <section class="main-banner" style="background:#242c36 url(/static/img/slider-01.jpg) no-repeat">
     <div class="container">
         <div class="caption">
-            <h2>Build Your Career</h2>
+            <h2 style="font-family: Aclonica;">Build Your Career</h2>
             <form action="{% url 'search2' %}">
                 <fieldset>
                     <div class="col-md-4 col-sm-4 no-pad">
@@ -118,15 +118,15 @@
     {% for team in team %}
             <div class="col-md-4 col-sm-4">
                 <div class="left-widget-sidebar">
-                    <div class="card-widget bg-white user-card">
+                    <div class="card-widget user-card">
                         <div class="u-img img-cover" style="background-image: url({{team.photo1.url}});background-size:cover;"></div>
                         <div class="u-content">
                             <div class="avatar box-80">
                                 <img class="img-responsive img-circle img-70 shadow-white" style="width:90px;height:90px;" src="{{team.photo2.url}}" alt="">
                                 <i class="fa fa-circle-o fa-green"></i>
                             </div>
-                            <h5>{{team.name}}</h5>
-                            <p class="text-muted">{{team.post}}</p>
+                            <h5 class="text-muted">{{team.name}}</h5>
+                            <p style="font-family: krinkes_regular_personal_usRg;font-weight:500;">{{team.role}}</p>
                         </div>
                         <div class="user-social-profile">
                             <ul>

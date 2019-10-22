@@ -1528,6 +1528,13 @@ footer {
   padding: 30px 0; 
 }
 
+.footer-img{
+  font-family: Aclonica;
+  font-style: oblique;
+  font-size:30px;
+  color:#000;
+}
+
 footer .copyright-footer {
   border-top: 1px solid #ddd;
   padding-top: 20px;
@@ -2315,7 +2322,13 @@ padding:0px;
 }
     .navbar-brand img {
         height:50px;
+        font-family: Aclonica;
+        font-style: oblique;
+        font-size:30px;
+        color:#000;
+
     }
+    
 .navbar-default .navbar-toggle {
     border-color: #FFF;
 }
