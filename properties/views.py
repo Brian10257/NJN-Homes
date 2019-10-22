@@ -49,6 +49,11 @@ def search(request):
                                                  Q(description2__icontains=keywords)|
                                                  Q(property_type__icontains=keywords)|
                                                  Q(title__icontains=keywords)|
+                                                 Q(status__icontains=keywords)|
+                                                 Q(bedrooms__icontains=keywords)|
+                                                 Q(city__icontains=keywords)|
+                                                 Q(bathrooms__icontains=keywords)|
+                                                 Q(garage__icontains=keywords)|
                                                  Q(amenity1__icontains=keywords)|
                                                  Q(amenity2__icontains=keywords)|
                                                  Q(amenity3__icontains=keywords)|

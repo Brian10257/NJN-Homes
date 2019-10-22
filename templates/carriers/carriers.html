@@ -9,7 +9,7 @@
 <section class="main-banner" style="background:#242c36 url(/static/img/slider-01.jpg) no-repeat">
     <div class="container">
         <div class="caption">
-            <h2 style="font-family: Aclonica;">Build Your Career</h2>
+            <h2 style="font-family: Aclonica;padding-top:65px">Build Your Career</h2>
             <form action="{% url 'search2' %}">
                 <fieldset>
                     <div class="col-md-4 col-sm-4 no-pad">
@@ -105,7 +105,7 @@
 {% endif %}
         <div class="text-center">
             {% if user.is_authenticated %}
-            <a href="{% url 'jobs' %}"><button type="submit" style="width: 200px; text-align:center" class="form-submit">Brows All Jobs</button></></a>
+            <a href="{% url 'jobs' %}"><button type="submit" style="width: 200px; text-align:center; color:aliceblue" class="btn btn-success">Brows All Jobs</button></></a>
             {% else %}
             <div class="col-md-12"><a href="{% url 'login' %}"><span style="font-family:Aclonica">LogIn</span></a> To Brows All Job Vaccancies</div>
             {% endif %}
