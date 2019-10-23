@@ -2,8 +2,8 @@ from django.db import models
 from datetime import datetime
 
 class Team(models.Model):
-    photo1 = models.ImageField(blank = True, null =True)
-    photo2 = models.ImageField(blank = True, null = True)
+    photo1 = models.ImageField(upload_to='Photos/Admins/%Y', blank = True, null =True)
+    photo2 = models.ImageField(upload_to='Photos/Admins/%Y', blank = True, null = True)
     name = models.CharField(max_length = 50000, blank =True)
     role = models.CharField(max_length= 500000, blank = True)
     date_posted = models.DateTimeField(default = datetime.now, blank = True)

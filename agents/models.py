@@ -4,7 +4,7 @@ from datetime import datetime
 class Agent(models.Model):
     name = models.CharField(max_length = 30000, blank = True)
     role = models.CharField(max_length = 30000, blank = True)
-    photo = models.ImageField(upload_to = 'photos/agents/%Y/%m', blank = True)
+    photo = models.ImageField(upload_to = 'Photos/Agents/%Y/%m', blank = True)
     description = models.TextField(blank=True)
     phone = models.CharField(max_length = 1000, blank = True)
     email = models.CharField(max_length = 5000, blank = True)

@@ -2,7 +2,7 @@ from django.db import models
 from datetime import datetime
 
 class Carrier(models.Model):
-    logo = models.ImageField(blank = True, upload_to = 'photos/Company Logo/%Y/%m', null = True)
+    logo = models.ImageField(blank = True, upload_to = 'Photos/Carrier/Company Logo/%Y/%m', null = True)
     company = models.CharField(max_length = 2000, blank = True)
     job_title = models.CharField(max_length = 2000, blank = True)
     job_available = models.BooleanField(default = True, blank = True)
@@ -46,7 +46,7 @@ class Carrier(models.Model):
         return self.job_title
     
 class Apply(models.Model):
-    docs = models.FileField(upload_to = 'photos/Applications/Files/%Y')
+    docs = models.FileField(upload_to = 'Application Files/%Y/%m')
     name = models.CharField(max_length = 500000, blank = True)
     email = models.EmailField(max_length = 50000, blank = True)
     phone = models.CharField(max_length = 50000, blank = True)

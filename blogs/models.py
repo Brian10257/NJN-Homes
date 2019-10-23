@@ -4,7 +4,7 @@ from datetime import datetime
 class Blog(models.Model):
     title = models.CharField(max_length = 50000, blank = True)
     sub_title = models.CharField(max_length = 50000, blank = True)
-    photo = models.FileField(upload_to='photos/blog/%Y/%m', blank = True)
+    photo = models.FileField(upload_to='Photos/Blog/%Y/%m', blank = True)
     author_name = models.CharField(max_length = 50000, blank = True)
     category = models.CharField(max_length = 50000, blank = True)
     introduction = models.TextField(blank = True)
@@ -21,7 +21,7 @@ class Blog(models.Model):
         return self.title
 
 class Comment(models.Model):
-    image = models.ImageField(blank = True, null = True)
+    image = models.ImageField(upload_to='Photos/Blog_comments/%Y/%m',blank = True, null = True)
     name = models.CharField(max_length = 50000)
     email = models.EmailField(max_length = 5000, blank = True)
     website = models.CharField(max_length = 5000, blank = True)
