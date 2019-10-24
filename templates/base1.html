@@ -11,7 +11,7 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta content="" name="keywords">
-  <meta content="" name="description">
+  <meta content="" name="description"> 
   <!-- Special Fonts -->
   <link rel="stylesheet" type="text/css" href="{% static 'fonts/krinkes_regular/stylesheet.css'%}">
   <link rel="stylesheet" type="text/css" href="{% static 'fonts/taken_by_vultures/stylesheet.css'%}">
@@ -118,7 +118,7 @@
             <div class="form-group">
               <label for="price">Min Price</label>
               <select class="form-control form-control-lg form-control-a" name="price" id="price">
-                <option selected="true" disabled="disabled">Max Price (Any)</option>
+                <option selected="true" disabled="disabled">Price (Max)</option>
                   {% for key,value in price_choices.items %}
                     <option value="{{ key }}">{{ value }}</option>
                   {% endfor %}
@@ -252,90 +252,138 @@
   {% endblock %}
   
   
-      
+<!--/ footer Star /-->
+<section class="section-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-4">
+        <div class="widget-a">
+          <div class="w-header-a">
+            <span style="font-size: 40px; font-weight:bold"><img src="/static/img/njn.png"  alt="NJN Homes Real Estate Company"></span>
+          </div>
+          <div class="w-body-a">
+            <p class="w-text-a color-text-a">
+              Enim minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat duis
+              sed aute irure.
+            </p>
+          </div>
+          <div class="w-footer-a">
+            <ul class="list-unstyled">
+              <li class="color-a">
+                <span class="color-text-a">Phone .</span> contact@example.com</li>
+              <li class="color-a">
+                <span class="color-text-a">Email .</span> +54 356 945234</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-4 section-md-t3">
+        <div class="widget-a">
+          <div class="w-header-a">
+            <h3 class="w-title-a text-brand" style="color: #000000;">Useful Links</h3>
+          </div>
+          <div class="w-body-a">
+            <div class="w-body-a">
+              <ul class="list-unstyled">
+                <li class="item-list-a">
+                  <i class="fa fa-angle-right"></i> <a href="{% url 'consult' %}" style="color: #000000;">Contact</a>
+                </li>
+                <li class="item-list-a">
+                  <i class="fa fa-angle-right"></i> <a href="{% url 'services' %}" style="color: #000000;">Services</a>
+                </li>
+                <li class="item-list-a">
+                  <i class="fa fa-angle-right"></i> <a href="{% url 'agents' %}" style="color: #000000;">Agent</a>
+                </li>
+                <li class="item-list-a">
+                  <i class="fa fa-angle-right"></i> <a href="{% url 'carriers' %}" style="color: #000000;">Careers</a>
+                </li>
+                <li class="item-list-a">
+                  <i class="fa fa-angle-right"></i> <a href="{%url 'blogs' %}" style="color: #000000;">Blog</a>
+                </li>
+                <li class="item-list-a">
+                  <i class="fa fa-angle-right"></i> <a href="{% url 'policy' %}" style="color: #000000;">Privacy Policy</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-4 section-md-t3">
+        <div class="widget-a">
+          <div class="w-header-a">
+            <h3 class="w-title-a text-brand">Find Us In</h3>
+          </div>
+          <div class="w-body-a">
+            <ul class="list-unstyled">
+              <li class="item-list-a">
+                <i class="fa fa-angle-right"></i> <a href="#" style="color: #000000;">Douala</a>
+              </li>
+              <li class="item-list-a">
+                <i class="fa fa-angle-right"></i> <a href="#" style="color: #000000;">Bamenda</a>
+              </li>
+              <li class="item-list-a">
+                <i class="fa fa-angle-right"></i> <a href="#" style="color: #000000;">Dschang</a>
+              </li>
+              <li class="item-list-a">
+                <i class="fa fa-angle-right"></i> <a href="#" style="color: #000000;">Yaounde</a>
+              </li>
+              <li class="item-list-a">
+                <i class="fa fa-angle-right"></i> <a href="#" style="color: #000000;">Dschang</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <footer>
   <div class="container">
     <div class="row">
-        <img src="/static/img/njn.png" class="image-fluid footer-img" alt="NJN HOMES">
       <div class="col-md-12">
-        <nav class="nav-footer">
-          <ul class="list-inline">
-            <li class="list-inline-item">
-              <a href="{% url 'index' %}" style="color:#000000; font-size: 18px">Home</a>
-            </li>
-            <li class="list-inline-item">
-              <a href="{% url 'about' %}" style="color:#000000; font-size: 18px">About</a>
-            </li>
-            <li class="list-inline-item">
-              <a href="{% url 'properties' %}" style="color:#000000; font-size: 18px">Property</a>
-            </li>
-            <li class="list-inline-item">
-              <a href="{% url 'blogs' %}" style="color:#000000; font-size: 18px">Blog</a>
-            </li>
-            <li class="list-inline-item">
-              <a href="{% url 'consult' %}" style="color:#000000; font-size: 18px">Contact</a>
-            </li>
-            <li class="list-inline-item">
-              <a href="{% url 'services' %}" style="color:#000000; font-size: 18px">Services</a>
-            </li>
-            <li class="list-inline-item">
-              <a href="{% url 'agents' %}" style="color:#000000; font-size: 18px">Agents</a>
-            </li>
-            <li class="list-inline-item">
-              <a href="{% url 'carriers' %}" style="color:#000000; font-size: 18px">Carriers</a>
-            </li>
-            <li class="list-inline-item">
-              <a href="{% url 'policy' %}" style="color:#000000; font-size: 18px">Privacy-Policy</a>
-            </li>
-          </ul>
-        </nav>
+        <div class="col-md-12 text-capitalize">
+          <h3>property search at your door</h3>
+        </div>
         <div class="socials-a">
           <ul class="list-inline">
             <li class="list-inline-item">
               <a href="#">
-                <i class="fa fa-facebook" style="color:#191cb4; font-size: 30px" aria-hidden="true"></i>
+                <i class="fa fa-facebook" style="color: #000000;" aria-hidden="true"></i>
               </a>
             </li>
             <li class="list-inline-item">
               <a href="#">
-                <i class="fa fa-twitter" style="color:#168ca1; font-size: 30px" aria-hidden="true"></i>
+                <i class="fa fa-twitter" style="color: #000000;" aria-hidden="true"></i>
               </a>
             </li>
             <li class="list-inline-item">
               <a href="#">
-                <i class="fa fa-instagram" style="color:#d44f27; font-size: 30px" aria-hidden="true"></i>
+                <i class="fa fa-instagram" style="color: #000000;" aria-hidden="true"></i>
               </a>
             </li>
             <li class="list-inline-item">
               <a href="#">
-                <i class="fa fa-google-plus" style="color:#c20000; font-size: 30px" aria-hidden="true"></i>
+                <i class="fa fa-google-plus" style="color: #000000;" aria-hidden="true"></i>
               </a>
             </li>
             <li class="list-inline-item">
               <a href="#">
-                <i class="fa fa-linkedin" style="color:#0c01a5; font-size: 30px" aria-hidden="true"></i>
+                <i class="fa fa-linkedin" style="color: #000000;" aria-hidden="true"></i>
               </a>
             </li>
           </ul>
         </div>
         <div class="copyright-footer">
-          <p style="font-weight: bold;">
-             Contact Us At njnhomes@yahoo.com or with our phone numbers: <span>+(237) 677458625</span>
+          <p class="copyright color-text-a">
+            <span class="color-a">NJN Homes</span><span class="text-capitalize" style="font-weight:bold"> real estate company.</span> 
           </p>
-        </div>
-        <div >
-          <h3 style="font-family: Aclonica;">NJN HOMES</h3>
         </div>
       </div>
     </div>
   </div>
 </footer>
 <!--/ Footer End /-->
-
-              
-<!-- ##### Footer Area End ##### -->
-     
-
+  
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
   <div id="preloader"></div>
 

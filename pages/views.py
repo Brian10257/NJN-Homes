@@ -26,7 +26,8 @@ def index(request):
         'bathroom_choices': bathroom_choices,
         'garage_choices': garage_choices,
         'price_choices': price_choices,
-        'blogs': blogs
+        'blogs': blogs,
+        'values': request.GET,
         
     }
     
@@ -34,4 +35,14 @@ def index(request):
     return render (request, 'pages/index.html', context )
 
 def policy(request):
-    return render(request, 'pages/policy.html')
+    
+    context ={
+        'state_choices':state_choices,
+        'bathroom_choices':bathroom_choices,
+        'bedroom_choices':bedroom_choices,
+        'garage_choices':garage_choices,
+        'price_choices':price_choices,
+        'values': request.GET,
+    }
+    
+    return render(request, 'pages/policy.html', context)

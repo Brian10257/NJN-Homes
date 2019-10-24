@@ -19,6 +19,7 @@ def properties(request):
         'bathroom_choices': bathroom_choices,
         'garage_choices': garage_choices,
         'price_choices': price_choices,
+        'values': request.GET,
     }
 
     return render(request, 'properties/properties.html', context)
@@ -33,7 +34,8 @@ def property_single(request, property_single_id):
         'bedroom_choices': bedroom_choices, 
         'bathroom_choices': bathroom_choices,
         'garage_choices': garage_choices,
-        'price_choices': price_choices
+        'price_choices': price_choices,
+        'values': request.GET,
     }
 
     return render(request, 'properties/property_single.html', context)
@@ -112,6 +114,6 @@ def search(request):
         'price_choices': price_choices,
         'garage_choices': garage_choices,
         'properties': queryset_list,
-        'values': request.GET
+        'values': request.GET,
     }
     return render(request, 'properties/search.html', context)
