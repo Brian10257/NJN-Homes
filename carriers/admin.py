@@ -11,8 +11,8 @@ class CarrierAdmin(admin.ModelAdmin):
 
 
 class ApplyAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'phone', 'place_of_origin', 'current_city', 'application_date')
-    list_display_links = ( 'name', 'email', 'place_of_origin',)
+    list_display = ('name', 'email', 'phone', 'current_city', 'application_date')
+    list_display_links = ( 'name', 'email', 'application_date',)
     search_fields = ('name', 'email', 'phone', 'place_of_origin', 'current_city', 'current_employment', 'neighbour_hood')
     list_filter = ( 'name', 'email', 'phone', 'place_of_origin', 'current_city', 'current_employment', 'neighbour_hood')
     list_per_page = 50

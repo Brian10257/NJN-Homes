@@ -20,7 +20,7 @@ def contact(request):
             has_contacted = Contact.objects.all().filter(property_single_id = property_single_id, user_id = user_id)
             if has_contacted:
                 messages.error(request, 'You have already submited an inquiry for this particular property')
-                return redirect('/property%23'+property_single_id)
+                return redirect('/listings/property%23'+property_single_id)
            
         
         contact = Contact(property_single=property_single, property_single_id=property_single_id, name=name, email=email, phone=phone, message=message, user_id=user_id)
@@ -36,4 +36,4 @@ def contact(request):
         )
 
         messages.success(request, ' Your request has been submitted, an Agent will get back to you soon')
-        return redirect('/property%23'+property_single_id)
+        return redirect('/listings/property%23'+property_single_id)

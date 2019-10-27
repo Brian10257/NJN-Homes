@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator        
 from django.contrib import messages
-from django.core.mail import send_mail
+from django.core.mail import send_mail, EmailMessage
 from django.db.models import Q
 from django.views.generic import ListView
 from carriers.choices import job_title_choices, experience_choices
@@ -46,20 +46,23 @@ def carrier(request, carrier_id):
         user_id = request.POST['user_id']
         if file_form.is_valid():
             for f in files: 
-                file_instance = Apply(docs=f, name=name, email=email, phone=phone, place_of_origin=place_of_origin, current_city=current_city, current_employment=current_employment, neighbour_hood=neighbour_hood, message=message, user_id=user_id)
-                file_instance.save()
+                files = Apply(docs=f, name=name, email=email, phone=phone, place_of_origin=place_of_origin, current_city=current_city, current_employment=current_employment, neighbour_hood=neighbour_hood, message=message, user_id=user_id)
+                files.save(send_mail)
                 
-                # Send Mail 
-                send_mail(
-                    'A Job Application At NJN HOMES Has Been Deposited',
-                    'There has been a Job Application for '+ carrier + '. Sign into admin panel for more info',
-                    'ntschangb@gmail.com', 
-                    ['ntschangb@yahoo.com', 'ntschangb@gmail.com'],
-                    fail_silently=False
-                )
-                messages.success(request, 'Your Application Has Been Recieved, We Will Get Back To You Soon')
-                return redirect('/carriers%' +carrier_id)
-    
+        # Send Mail  
+        if request.user.is_authenticated:
+            subject= str(request.user) + " Sent A Job Application On The  NJN HOMES Web Service"
+        else:
+            subject= "A Visitor Sent A Job Application On The NJN HOMES Web Service"
+
+
+        message= name + " With The Email: " + email +" And Phone Number: "+phone+ ", Deposited A Job Application For The Position Of: " +str(carrier)+ "\n\n" + message+ "\n\n\n Contact The Web Master For More Information On This Applicaton And Also To Access The Applicant's Files.";
+        send_mail(subject, message, 'wgrealestate21@gmail.com', ['ntschangb@yahoo.com', 'ntschangb@gmail.com'] , [email])
+
+        
+        messages.success(request, ' Your Application Has Been Recieved. We\'ll get back to you latter')
+        
+        
     context = {
         'carrier': carrier,
         'state_choices': state_choices,
