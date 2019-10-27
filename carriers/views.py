@@ -11,7 +11,7 @@ from .forms import ApplyModelForm
 from team.models import Team
 
 def carriers(request):
-    carriers = Carrier.objects.order_by('-date_posted').filter(is_published = True)[:6]
+    carriers = Carrier.objects.order_by('-date_posted').filter(is_published = True)[:10]
     team = Team.objects.order_by('-date_posted') 
     
     context = {
@@ -42,22 +42,23 @@ def carrier(request, carrier_id):
         current_city = request.POST['current_city']
         neighbour_hood = request.POST['neighbour_hood']
         current_employment = request.POST['current_employment']
+        subject = request.POST['subject']
         message = request.POST['message']
         user_id = request.POST['user_id']
         if file_form.is_valid():
             for f in files: 
-                files = Apply(docs=f, name=name, email=email, phone=phone, place_of_origin=place_of_origin, current_city=current_city, current_employment=current_employment, neighbour_hood=neighbour_hood, message=message, user_id=user_id)
+                files = Apply(docs=f, name=name, email=email, phone=phone, place_of_origin=place_of_origin, current_city=current_city, current_employment=current_employment, neighbour_hood=neighbour_hood, subject=subject, message=message, user_id=user_id)
                 files.save(send_mail)
                 
         # Send Mail  
         if request.user.is_authenticated:
-            subject= str(request.user) + " Sent A Job Application On The  NJN HOMES Web Service"
+            subject= str(request.user) +": Message Subject; "+ subject
         else:
-            subject= "A Visitor Sent A Job Application On The NJN HOMES Web Service"
+            subject= "A Visitor: Message Subject; "+ subject
 
 
         message= name + " With The Email: " + email +" And Phone Number: "+phone+ ", Deposited A Job Application For The Position Of: " +str(carrier)+ "\n\n" + message+ "\n\n\n Contact The Web Master For More Information On This Applicaton And Also To Access The Applicant's Files.";
-        send_mail(subject, message, 'wgrealestate21@gmail.com', ['ntschangb@yahoo.com', 'ntschangb@gmail.com'] , [email])
+        send_mail(subject, message, 'wgrealestate21@gmail.com', ['ntschangb@yahoo.com', 'ntschangb@gmail.com'] , [''])
 
         
         messages.success(request, ' Your Application Has Been Recieved. We\'ll get back to you latter')

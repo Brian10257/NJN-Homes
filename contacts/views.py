@@ -14,7 +14,7 @@ def contact(request):
         user_id = request.POST['user_id']
         agent_email = request.POST['agent_email']
         
-        # Check if User has Made Inquiry Already
+        # Check if User has Made Inquiry Already 
         if request.user.is_authenticated:
             user_id = request.user.id
             has_contacted = Contact.objects.all().filter(property_single_id = property_single_id, user_id = user_id)

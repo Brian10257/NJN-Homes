@@ -19,13 +19,13 @@ def consult(request):
 
         # Send Mail  
         if request.user.is_authenticated:
-            subject= str(request.user) +': '+ subject
+            subject= str(request.user) +': Message Subject; '+ subject
         else:
-            subject= "A Visitor: "+subject 
+            subject= "A Visitor: Message Subject; "+subject 
 
 
         message= name + " With The Email: " + email +", And Phone Number: "+phone+", Sent The Following Message:\n\n" + message+"\n\n Please Do Reply Promtly.";
-        send_mail(subject, message, ['wgrealestate21@gmail.com'], ['ntschangb@yahoo.com', 'ntschangb@gmail.com'] , [email])
+        send_mail(subject, message, 'wgrealestate21@gmail.com', ['ntschangb@yahoo.com', 'ntschangb@gmail.com'] , [email])
 
 
         messages.success(request, ' Your Message Has Been Recieved. We\'ll get back to you latter')
