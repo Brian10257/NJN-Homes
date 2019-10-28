@@ -12,7 +12,7 @@ from team.models import Team
 
 def carriers(request):
     carriers = Carrier.objects.order_by('-date_posted').filter(is_published = True)[:10]
-    team = Team.objects.order_by('-date_posted') 
+    team = Team.objects.all() 
     
     context = {
         'team':team,    

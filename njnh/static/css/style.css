@@ -396,7 +396,7 @@ a:hover {
   position: absolute;
   top: 0;
   right: 0;
-  font-size: 1.2rem;
+  font-size: 20px;
 }
 
 .nav-arrow-b .owl-arrow .owl-nav .owl-prev,
@@ -405,7 +405,7 @@ a:hover {
   display: inline-block;
   transition: all 0.6s ease-in-out;
   color: #ffffff;
-  background-color: #2eca6a;
+  background-color: transparent;
   opacity: .9;
 }
 
@@ -417,7 +417,8 @@ a:hover {
 
 .nav-arrow-b .owl-arrow .owl-nav .owl-prev:hover,
 .nav-arrow-b .owl-arrow .owl-nav .owl-next:hover {
-  background-color: #26a356;
+  background-color: #0a995e;
+  font-size:10px; 
 }
 
 .nav-arrow-b .owl-arrow .owl-nav .owl-next {
@@ -1058,7 +1059,7 @@ a:hover {
   width: 100%;
   position: absolute;
   z-index: 2;
-  background-color: #68e773;
+  background-color: #81c2a9;
 }
 
 .card-info {
@@ -1350,7 +1351,7 @@ a:hover {
 }
 
 .card-box-d:hover .card-overlay-hover {
-  background-color: #94ca92;
+  background-color: #81c2a9;
   opacity: .9;
 }
 
@@ -2296,13 +2297,15 @@ input[type=checkbox]:not(old):checked + label > span:before {
 }
 
 .policy{
-  font-family:Georgia, serif;
+  font-family:Georgia, serif; 
+  padding-top :120px;
 }
   .policy h1{
     font-family: Stencil Std, fantasy;
     text-align: center ;
     text-decoration: underline;
     font-size:54px;
+    color:rgb(12, 129, 31);
   }
   .policy h2{
     text-align: center;
@@ -2312,7 +2315,7 @@ input[type=checkbox]:not(old):checked + label > span:before {
     font-size: 38px;
     text-decoration:underline;
     font-style: oblique;
-
+    color:rgb(125, 145, 14);
   }
 
   .policy h3{
@@ -2320,12 +2323,14 @@ input[type=checkbox]:not(old):checked + label > span:before {
     font-weight:600;
     font-size: 33px;
     font-family:Brush Script MT, Brush Script Std, cursive;
+    color:rgb(18, 201, 185);
   }
 
   .policy h4{
     text-align: center;
     font-weight: bolder;
     font-family:Apple Chancery, cursive;
+    color:rgb(35, 46, 4)
   }
 
   .policy a{

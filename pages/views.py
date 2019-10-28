@@ -14,9 +14,6 @@ def index(request):
     properties = Property_single.objects.order_by('-list_date').filter(is_published = True) [:3]
     agents = Agent.objects.order_by('-hire_date')[:3]
     blogs = Blog.objects.order_by('-date_published')[:3]
-    paginator = Paginator(properties, 6)
-    page = request.GET.get('page')   
-    paged_properties = paginator.get_page(page) 
     
     context = {
         'agents':agents,

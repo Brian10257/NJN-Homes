@@ -39,7 +39,7 @@
         <div class="col-md-4">
           <div class="card-box-a card-shadow">
             <div class="img-box-a">
-              <img src="{{property_single.photo_main.url}}" alt="" class="img-a img-fluid">
+              <img src="{{property_single.photo_main.url}}" alt="" style="height: 450px; width:400px"  class="img-a img-thumbnail">
             </div>
             <div class="card-overlay">
               <div class="card-overlay-a-content">
@@ -50,14 +50,17 @@
                       </a>
                   </h2>
                 </div>
+                <br>
                 <div class="card-body-a">
                   <div class="price-box d-flex">
-                    <span class="price-a">{{property_single.status}} | ${{property_single.price | intcomma}}</span>
+                    <a href="{% url 'property_single' property_single.id %}"><span class="price-a">{{property_single.status}} | ${{property_single.price | intcomma}}</span></a>
                   </div>
+                  <br>
                   <a href="{% url 'property_single' property_single.id %}" class="link-a">Click here to view
                     <span class="ion-ios-arrow-forward"></span>
                   </a>
                 </div>
+                <br>
                 <div class="card-footer-a">
                   <ul class="card-info d-flex justify-content-around">
                     <li>
@@ -67,11 +70,11 @@
                       </span>
                     </li>
                     <li>
-                      <h4 class="card-info-title">Bedrooms</h4>
+                      <h4 class="card-info-title">Beds</h4>
                       <span>{{property_single.bedrooms}}</span>
                     </li>
                     <li>
-                      <h4 class="card-info-title">Bathrooms</h4>
+                      <h4 class="card-info-title">Baths</h4>
                       <span>{{property_single.bathrooms}}</span>
                     </li>
                     <li>

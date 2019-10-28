@@ -118,6 +118,9 @@
 <section class="membercard dark">
     <div class="container">
         <div class="row">
+            <div class="col-md-12" style="text-align: center;">
+                <h1 class="text-uppercase" style="font-family:krinkes_regular_personal_usRg; color:green; font-weight:900"><u>the administration</u></h1>
+            </div>
 {% if team %}
     {% for team in team %}
             <div class="col-md-4 col-sm-4">
@@ -127,18 +130,18 @@
                         <div class="u-content">
                             <div class="avatar box-80">
                                 <img class="img-responsive img-circle img-70 shadow-white" style="width:90px;height:90px;" src="{{team.photo2.url}}" alt="">
-                                <i class="fa fa-circle-o fa-green"></i>
+                                <i class="fa fa-circle-o" style="color: rgb(30, 179, 224); font-size:10px;font-weight:900"></i>
                             </div>
                             <h5 class="text-muted">{{team.name}}</h5>
                             <p style="font-family: krinkes_regular_personal_usRg;font-weight:500;">{{team.role}}</p>
                         </div>
                         <div class="user-social-profile">
                             <ul>
-                                <li><a href="{{team.facebook}}"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href=" {{team.twitter}} "><i class="fa fa-twitter"></i></a></li>
-                                <li><a href=" {{team.instagram}} "><i class="fa fa-instagram"></i></a></li>
-                                <li><a href="{{team.google_plus}}"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a href="{{team.linkedin}}"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="{{team.facebook}}"><i class="fa fa-facebook" style="background: #295396;"></i></a></li>
+                                <li><a href=" {{team.twitter}} "><i class="fa fa-twitter" style="background: #1da0f2;"></i></a></li>
+                                <li><a href=" {{team.instagram}} "><i class="fa fa-instagram" style="background: #d3368c;"></i></a></li>
+                                <li><a href="{{team.google_plus}}"><i class="fa fa-google-plus" style="background: #d6201f;"></i></a></li>
+                                <li><a href="{{team.linkedin}}"><i class="fa fa-linkedin" style="background: #0077b5;"></i></a></li>
                             </ul>
                         </div>
                     </div>
