@@ -32,7 +32,7 @@ a:hover{
 }
 
 a.section:link, a.section:visited{
-    color: rgb(212, 201, 149)));
+    color: rgb(177, 169, 131);
 }
 
 a.active.selector-chooseall, a.active.selector-clearall{
