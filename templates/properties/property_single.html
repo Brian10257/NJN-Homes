@@ -11,8 +11,8 @@
     <div class="row">
       <div class="col-md-12 col-lg-8">
         <div class="title-single-box">
-          <h1 class="title-single" style="font-family: krinkes_decor_personal_useRg; color:#000000">{{property_single.city}}</h1>
-          <span class="color-text-a">{{property_single.address}}</span>
+          <h1 class="title-single" style="font-family: krinkes_decor_personal_useRg; color:#000000">{{property_single.title}}</h1>
+          <span class="color-text-a">{{property_single.city}}</span>
         </div>
       </div>
       <div class="col-md-12 col-lg-4">
@@ -25,7 +25,7 @@
               <a href="{% url 'properties' %}">Properties</a>
             </li>
             <li class="breadcrumb-item active" aria-current="page">
-              {{property_single.city}}
+              {{property_single.address}}
             </li>
           </ol>
         </nav>

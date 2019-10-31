@@ -24,7 +24,8 @@
   <!-- Bootstrap CSS File -->
     <link href="{% static 'lib/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
 
-    <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet" />
+    <link href="{% static 'lib/bootstrap/css/bootstrap.css'%}" rel="stylesheet">
+
     <!-- IONICON STYLE SHEET FOR BEAUTIFUL ICONS -->
     <link href="{% static 'css/ionicons.css'%}" rel="stylesheet" />
     <!-- STYLE FOR OPENING IMAGE IN POPUP USING FANCYBOX-->
@@ -134,8 +135,7 @@
   </div>
   <!--/ Form Search End /-->
 
-  <!-- Nav bar -->
-  {% load staticfiles %}
+  
 <!--/ Nav Star /-->
 <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
     <div class="container">
@@ -252,138 +252,136 @@
   {% endblock %}
   
   
-<!--/ footer Star /-->
-<section class="section-footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12 col-md-4">
-        <div class="widget-a">
-          <div class="w-header-a">
-            <span style="font-size: 40px; font-weight:bold"><img src="/static/img/njn.png"  alt="NJN Homes Real Estate Company"></span>
-          </div>
-          <div class="w-body-a">
-            <p class="w-text-a color-text-a">
-              Enim minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat duis
-              sed aute irure.
-            </p>
-          </div>
-          <div class="w-footer-a">
-            <ul class="list-unstyled">
-              <li class="color-a">
-                <span class="color-text-a">Phone .</span> contact@example.com</li>
-              <li class="color-a">
-                <span class="color-text-a">Email .</span> +54 356 945234</li>
-            </ul>
+    <!--/ footer Star /-->
+  <section class="section-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-4">
+          <div class="widget-a">
+            <div class="w-body-a">
+              <p class="w-text-a">
+                NJN Homes has established a solid reputation in Cameroon over the years as a dependable Real Estate Developer. 
+                A cost-effective supplier of exclusive affordable homes, constructed to meet different budgets and clients’ life-style.
+              </p>
+              <p class="w-text-a">NJN HOMES DEVELOPER created in 2011 with Head Office in Bamenda. Incorporation No.RC.BDA.2011B.135 and approved by the 
+                Ministry of Housing and Urban Development (MINHDU) on May 30th 2013.</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-sm-12 col-md-4 section-md-t3">
-        <div class="widget-a">
-          <div class="w-header-a">
-            <h3 class="w-title-a text-brand" style="color: #000000;">Useful Links</h3>
+        <div class="col-sm-12 col-md-4 section-md-t3">
+          <div class="widget-a">
+            <div class="w-header-a">
+              <h3 class="w-title-a text-brand" style="color: #000000;">Useful Links</h3>
+            </div>
+            <div class="w-body-a">
+              <div class="w-body-a">
+                <ul class="list-unstyled">
+                  <li class="item-list-a">
+                    <i class="fa fa-angle-right"></i> <a href="{% url 'consult' %}" style="color: #000000;">Contact</a>
+                  </li>
+                  <li class="item-list-a">
+                    <i class="fa fa-angle-right"></i> <a href="{% url 'services' %}" style="color: #000000;">Services</a>
+                  </li>
+                  <li class="item-list-a">
+                    <i class="fa fa-angle-right"></i> <a href="{% url 'agents' %}" style="color: #000000;">Agent</a>
+                  </li>
+                  <li class="item-list-a">
+                    <i class="fa fa-angle-right"></i> <a href="{% url 'carriers' %}" style="color: #000000;">Carriers</a>
+                  </li>
+                  <li class="item-list-a">
+                    <i class="fa fa-angle-right"></i> <a href="{%url 'blogs' %}" style="color: #000000;">Blog</a>
+                  </li>
+                  <li class="item-list-a">
+                    <i class="fa fa-angle-right"></i> <a href="{% url 'policy' %}" style="color: #000000;">Privacy Policy</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div class="w-body-a">
+        </div>
+        <div class="col-sm-12 col-md-4 section-md-t3">
+          <div class="widget-a">
+            <div class="w-header-a">
+              <h3 class="w-title-a text-brand">Info-Line</h3>
+            </div>
             <div class="w-body-a">
               <ul class="list-unstyled">
-                <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="{% url 'consult' %}" style="color: #000000;">Contact</a>
-                </li>
-                <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="{% url 'services' %}" style="color: #000000;">Services</a>
-                </li>
-                <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="{% url 'agents' %}" style="color: #000000;">Agent</a>
-                </li>
-                <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="{% url 'carriers' %}" style="color: #000000;">Careers</a>
-                </li>
-                <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="{%url 'blogs' %}" style="color: #000000;">Blog</a>
-                </li>
-                <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="{% url 'policy' %}" style="color: #000000;">Privacy Policy</a>
-                </li>
+                  <div class="w-footer-a">
+                      <ul class="list-unstyled">
+                        <li class="color-a" style="font-weight: bold;">
+                            NJN Homes Real Estate Developer
+                            P.O. Box 66 Bamenda,
+                            North West Region, CAMEROON 
+                        </li>
+                        <li class="color-a">
+                          <span style="font-weight: bold;">Phone:</span> (+237) 661 635 222 </li>
+                        <li class="color-a">
+                          <span style="font-weight: bold;">What's App:</span> (+237) 651 355 306</li>
+                        <li class="color-a">
+                          <span style="font-weight: bold;">Email:</span> njncho@yahoo.com</li>
+                        <li class="color-a">
+                          <span style="font-weight: bold;">Website:</span> www.njnhomes.com</li>
+                      </ul>
+                    </div>
               </ul>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-sm-12 col-md-4 section-md-t3">
-        <div class="widget-a">
-          <div class="w-header-a">
-            <h3 class="w-title-a text-brand">Find Us In</h3>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <div class="row">
+          <a class="navbar-brand" href="{% url 'index' %}">
+              <div class="logo-image">
+                  <img src="/static/img/njn.png" alt="NJN HOMES" class="image-fluid">
+              </div>
+            </a>
+        <div class="col-md-12">
+          <div class="col-md-12 text-capitalize">
+            <h3>property search at your door</h3>
           </div>
-          <div class="w-body-a">
-            <ul class="list-unstyled">
-              <li class="item-list-a">
-                <i class="fa fa-angle-right"></i> <a href="#" style="color: #000000;">Douala</a>
+          <div class="socials-a">
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fa fa-facebook" style="color: #000000;" aria-hidden="true"></i>
+                </a>
               </li>
-              <li class="item-list-a">
-                <i class="fa fa-angle-right"></i> <a href="#" style="color: #000000;">Bamenda</a>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fa fa-twitter" style="color: #000000;" aria-hidden="true"></i>
+                </a>
               </li>
-              <li class="item-list-a">
-                <i class="fa fa-angle-right"></i> <a href="#" style="color: #000000;">Dschang</a>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fa fa-instagram" style="color: #000000;" aria-hidden="true"></i>
+                </a>
               </li>
-              <li class="item-list-a">
-                <i class="fa fa-angle-right"></i> <a href="#" style="color: #000000;">Yaounde</a>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fa fa-google-plus" style="color: #000000;" aria-hidden="true"></i>
+                </a>
               </li>
-              <li class="item-list-a">
-                <i class="fa fa-angle-right"></i> <a href="#" style="color: #000000;">Dschang</a>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fa fa-linkedin" style="color: #000000;" aria-hidden="true"></i>
+                </a>
               </li>
             </ul>
           </div>
+          <div class="copyright-footer">
+            <p class="copyright color-text-a">
+              <span class="color-a">NJN Homes</span><span class="text-capitalize" style="font-weight:bold"> real estate company.</span> 
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="col-md-12 text-capitalize">
-          <h3>property search at your door</h3>
-        </div>
-        <div class="socials-a">
-          <ul class="list-inline">
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fa fa-facebook" style="color: #000000;" aria-hidden="true"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fa fa-twitter" style="color: #000000;" aria-hidden="true"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fa fa-instagram" style="color: #000000;" aria-hidden="true"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fa fa-google-plus" style="color: #000000;" aria-hidden="true"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fa fa-linkedin" style="color: #000000;" aria-hidden="true"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="copyright-footer">
-          <p class="copyright color-text-a">
-            <span class="color-a">NJN Homes</span><span class="text-capitalize" style="font-weight:bold"> real estate company.</span> 
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-<!--/ Footer End /-->
-  
+  </footer>
+  <!--/ Footer End /-->
+
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
   <div id="preloader"></div>
 

@@ -952,7 +952,7 @@ a:hover {
 
 .intro-single .title-single-box .title-single {
   font-weight: 600;
-  font-size: 2.2rem;
+  font-size: 29px;
 }
 
 .intro-single .breadcrumb-box {
@@ -1503,6 +1503,7 @@ a:hover {
 
 .section-footer {
   padding-top: 60px;
+  padding-bottom: 60px;
   margin-top: 60px;
   background: #c1cfc6;
 }
@@ -2304,7 +2305,7 @@ input[type=checkbox]:not(old):checked + label > span:before {
     font-family: Stencil Std, fantasy;
     text-align: center ;
     text-decoration: underline;
-    font-size:54px;
+    font-size:49px;
     color:rgb(12, 129, 31);
   }
   .policy h2{
@@ -2312,7 +2313,7 @@ input[type=checkbox]:not(old):checked + label > span:before {
     margin-top: 30px;
     margin-bottom:30px;
     font-weight: 900;
-    font-size: 38px;
+    font-size: 34px;
     text-decoration:underline;
     font-style: oblique;
     color:rgb(125, 145, 14);

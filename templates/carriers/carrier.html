@@ -26,11 +26,11 @@
                     </div>
                     <div class="col-md-9 col-sm-9 text-capitalize">
                         <div class="profile-content">
-                                <h2 style="padding-top: 20px;">COMPANY: <u>{{carrier.company}}</u><span>{{carrier.job_title}}</span></h2>
+                                <h2 style="padding-top: 20px;">COMPANY: <u>{{carrier.company}}</u><span style="color:#9aa043">{{carrier.job_title}}</span></h2>
                                 {%if carrier.job_available is True%}
-                                <p>Job vacancy Now Available</p>
+                                <p style="font-family: Aclonica;">Job vacancy Now Available</p>
                                 {% else %}
-                                <p>Job vacancy unavailable</p>
+                                <p style="font-family: Aclonica;" class="text-danger">Job vacancy unavailable</p>
                                 {% endif %}
                                 <ul class="information">
                                     <li><span>Address:</span>{{carrier.address}}</li>

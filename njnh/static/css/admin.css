@@ -87,3 +87,7 @@ div.breadcrumbs a {
 .selector-chosen h2{
     background: #1ca117;
 }
+
+.submit-row a.closelink{
+    background: rgb(220, 20, 60);
+}

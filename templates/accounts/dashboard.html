@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}{{user.username}} Dashboard {% endblock %}
+{% block title %}{{user.username}}'s Dashboard {% endblock %}
 
 {% block content %}
 <section class="py-5"> 
@@ -36,7 +36,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <h2>Welcome Mr/Miss {{ user.first_name }}</h2>
+              <h2 class="text-capitalize" style="font-weight:bold; ">Welcome <span style="font-family:Aclonica">{{ user.first_name }}</span></h2>
               {% if contacts %}
                 <u><p>Properties In Which You Are Interested</p></u>
                 <table class="table">
