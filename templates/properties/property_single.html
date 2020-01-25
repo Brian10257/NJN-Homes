@@ -143,10 +143,7 @@
             </div>
             <div class="property-description">
               <p class="description color-text-a">
-                  {{property_single.description1}}
-              </p>
-              <p class="description color-text-a no-margin">
-                  {{property_single.description2}}
+                  {{property_single.content | linebreaks}}
               </p>
             </div>
             <div class="row section-t3">
@@ -158,15 +155,33 @@
             </div>
             <div class="amenities-list color-text-a text-capitalize">
               <ul class="list-a no-margin">
+              {% if property_single.amenity1 %}
                 <li>{{property_single.amenity1}}</li>
+              {% endif %}
+              {% if property_single.amenity2 %}
                 <li>{{property_single.amenity2}}</li>
+              {% endif %}
+              {% if property_single.amenity3 %}
                 <li>{{property_single.amenity3}}</li>
+              {% endif %}
+              {% if property_single.amenity4 %}
                 <li>{{property_single.amenity4}}</li>
+              {% endif %}
+              {% if property_single.amenity5 %}
                 <li>{{property_single.amenity5}}</li>
+              {% endif %}
+              {% if property_single.amenity6 %}
                 <li>{{property_single.amenity6}}</li>
+              {% endif %}
+              {% if property_single.amenity7 %}
                 <li>{{property_single.amenity7}}</li>
+              {% endif %}
+              {% if property_single.amenity8 %}
                 <li>{{property_single.amenity8}}</li>
+              {% endif %}
+              {% if property_single.amenity9 %}
                 <li>{{property_single.amenity9}}</li>
+              {% endif %}
               </ul>
             </div>
           </div>
@@ -189,7 +204,7 @@
             <div class="property-agent text-capitalize">
               <h4 class="title-agent">{{property_single.agent.name}}</h4>
               <p class="color-text-a">
-                  {{property_single.agent.description}}
+                  {{property_single.agent.description | linebreaks}}
               </p>
               <ul class="list-unstyled">
                 <li class="d-flex justify-content-between">

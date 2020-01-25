@@ -46,14 +46,14 @@
               <div class="card-header-d">
                 <div class="card-title-d align-self-center">
                   <h3 class="title-d text-capitalize">
-                    <a href="{% url 'agent' agent.id %}" class="link-two">{{agent.name}}
+                    <a href="{% url 'agent' agent.slug %}" class="link-two">{{agent.name}}
                       </a>
                   </h3>
                 </div>
               </div>
               <div class="card-body-d">
                 <p class="content-d color-text-a">
-                    {{agent.description | truncatechars:350}}
+                    {{agent.description | truncatechars:300 | linebreaks}}
                 </p>
                 <div class="info-agents color-a">
                   <p>

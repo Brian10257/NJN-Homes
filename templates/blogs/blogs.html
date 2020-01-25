@@ -35,26 +35,26 @@
   <section class="news-grid grid text-capitalize">
     <div class="container">
       <div class="row">
-  {% if blogs %}
-    {% for blog in blogs %}
+  {% if blog_list %}
+    {% for post in blog_list %}
         <div class="col-md-4">
           <div class="card-box-b card-shadow news-box">
             <div class="img-box-b">
-              <img src="{{blog.photo.url}}" alt="" style="height: 450px; width:400px" class="img-b img-thumbnail">
+              <img src="{{post.photo.url}}" alt="" style="height: 450px; width:400px" class="img-b img-thumbnail">
             </div>
             <div class="card-overlay">
               <div class="card-header-b">
                 <div class="card-category-b">
-                  <a href="{% url 'blog' blog.id %}" class="category-b">{{blog.category}}</a>
+                  <a href="{% url 'blog' post.slug %}" class="category-b">{{post.category}}</a>
                 </div>
                 <div class="card-title-b">
                   <h2 class="title-2">
-                    <a href="{% url 'blog' blog.id %}">{{blog.sub_title}}
+                    <a href="{% url 'blog' post.slug %}">{{post.sub_title}}
                       </a>
                   </h2>
                 </div>
                 <div class="card-date">
-                  <span class="date-b">{{blog.date_published}}</span>
+                  <span class="date-b">{{post.date_published}}</span>
                 </div>
               </div>
             </div>

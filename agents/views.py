@@ -28,8 +28,8 @@ def agents(request):
 
     return render (request, 'agents/agents.html', context)  
 
-def agent(request, agent_id):
-    agent = get_object_or_404(Agent, pk= agent_id) 
+def agent(request, slug):
+    agent = get_object_or_404(Agent, slug=slug) 
     properties = Property_single.objects.order_by('-list_date').filter(is_published = True)
     property_single = Property_single.objects.all()
     context= {

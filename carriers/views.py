@@ -29,8 +29,8 @@ def carriers(request):
     return render(request, 'carriers/carriers.html', context)
 
 
-def carrier(request, carrier_id):
-    carrier = get_object_or_404(Carrier, pk= carrier_id)
+def carrier(request, slug):
+    carrier = get_object_or_404(Carrier, slug=slug)
     
     if request.method == 'POST':
         file_form = ApplyModelForm(request.POST, request.FILES)  
@@ -57,7 +57,7 @@ def carrier(request, carrier_id):
             subject= "A Visitor: Message Subject; "+ subject
 
 
-        message= name + " With The Email: " + email +" And Phone Number: "+phone+ ", Deposited A Job Application For The Position Of: " +str(carrier)+ "\n\n" + message+ "\n\n\n Contact The Web Master For More Information On This Applicaton And Also To Access The Applicant's Files.";
+        message= name + " With The Email: " + email +" And Phone Number: "+phone+ ", Deposited A Job Application For The Position Of: " +str(carrier)+ "\n\n" + message+ str(files) +"\n\n\n Contact The Web Master For More Information On This Applicaton And Also To Access The Applicant's Files.";
         send_mail(subject, message, 'wgrealestate21@gmail.com', ['ntschangb@yahoo.com', 'ntschangb@gmail.com'] , [''])
 
         

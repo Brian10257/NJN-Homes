@@ -6,6 +6,7 @@ class AgentAdmin(admin.ModelAdmin):
     list_display_links = ('name','role', 'email')
     search_fields = ('name','role', 'hire_date')
     list_per_page = 50
+    prepopulated_fields = {'slug': ('name', 'role')}
 
 admin.site.register(Agent, AgentAdmin)
  

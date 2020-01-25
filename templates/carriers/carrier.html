@@ -54,7 +54,7 @@
                         </div>
                                             <!-- /.panel-heading -->
                         <div class="panel-body">
-                        <p>{{carrier.about_job}}</p>	
+                        <p>{{carrier.about_job | linebreaks}}</p>	
                         </div>
                     </div>
                     
@@ -64,18 +64,38 @@
                         </div>
                                             <!-- /.panel-heading -->
                         <div class="panel-body">
-                        <p>{{carrier.responsibility_intro}}</p>	
+                        <p>{{carrier.responsibility_intro | linebreaks}}</p>	
                         <ul style="color:#108ca1">
+                          {% if carrier.responsibility1 %}
                             <li>{{carrier.responsibility1}}</li>
+                          {% endif %}
+                          {% if carrier.responsibility2 %}
                             <li>{{carrier.responsibility2}}</li>
+                          {% endif %}
+                          {% if carrier.responsibility3 %}
                             <li>{{carrier.responsibility3}}</li>
+                          {% endif %}
+                          {% if carrier.responsibility4 %}
                             <li>{{carrier.responsibility4}}</li>
+                          {% endif %}
+                          {% if carrier.responsibility5 %}
                             <li>{{carrier.responsibility5}}</li>
+                          {% endif %}
+                          {% if carrier.responsibility6 %}
                             <li>{{carrier.responsibility6}}</li>
+                          {% endif %}
+                          {% if carrier.responsibility7 %}
                             <li>{{carrier.responsibility7}}</li>
+                          {% endif %}
+                          {% if carrier.responsibility8 %}
                             <li>{{carrier.responsibility8}}</li>
+                          {% endif %}
+                          {% if carrier.responsibility9 %}
                             <li>{{carrier.responsibility9}}</li>
+                          {% endif %}
+                          {% if carrier.responsibility10 %}
                             <li>{{carrier.responsibility10}}</li>
+                          {% endif %}
                         </ul>
                         </div>
                     </div>
@@ -86,18 +106,38 @@
                         </div>
                                             <!-- /.panel-heading -->
                         <div class="panel-body">
-                        <p>{{carrier.qualification_intro}} </p>	
+                        <p>{{carrier.qualification_intro | linebreaks}} </p>	
                         <ul style="color:#108ca1">
+                          {% if carrier.qualification1 %}
                             <li>{{carrier.qualification1}}</li>
+                          {% endif %}
+                          {% if carrier.qualification2 %}
                             <li>{{carrier.qualification2}}</li>
+                          {% endif %}
+                          {% if carrier.qualification3 %}
                             <li>{{carrier.qualification3}}</li>
+                          {% endif %}
+                          {% if carrier.qualification4 %}
                             <li>{{carrier.qualification4}}</li>
+                          {% endif %}
+                          {% if carrier.qualification5 %}
                             <li>{{carrier.qualification5}}</li>
+                          {% endif %}
+                          {% if carrier.qualification6 %}
                             <li>{{carrier.qualification6}}</li>
+                          {% endif %}
+                          {% if carrier.qualification7 %}
                             <li>{{carrier.qualification7}}</li>
+                          {% endif %}
+                          {% if carrier.qualification8 %}
                             <li>{{carrier.qualification8}}</li>
+                          {% endif %}
+                          {% if carrier.qualification9 %}
                             <li>{{carrier.qualification9}}</li>
+                          {% endif %}
+                          {% if carrier.qualification10 %}
                             <li>{{carrier.qualification10}}</li>
+                          {% endif %}
                         </ul>
                         </div>
                     </div>
@@ -127,7 +167,7 @@
                 <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <input type="file" name="docs" accept=".jpg, .jpeg, .png, .docs, .doc, .pdf, .txt" id="docs" aria-required="false" multiple/>
+                                <input type="file" name="docs" accept=".jpg, .jpeg, .png, .docs, .doc, .pdf, .txt" id="docs" aria-required="false">
                             </div>
                         </div>
                     <div class="col-md-12 mb-3">

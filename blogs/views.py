@@ -1,64 +1,38 @@
-from django.shortcuts import get_object_or_404, render, redirect
-from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
-from django.core.mail import send_mail
-from properties.choices import price_choices, bedroom_choices, bathroom_choices, garage_choices, state_choices         
-from django.contrib import messages
-from .models import Blog, Comment
+from django.views import generic
+from .models import Blog
+from .forms import CommentForm
+from django.shortcuts import render, get_object_or_404
 
 
-def blogs(request):
-    blogs = Blog.objects.order_by('-date_published') 
-    paginator = Paginator(blogs, 6)
-    page = request.GET.get('page')
-    paged_blogs = paginator.get_page(page)
+class BlogList(generic.ListView):
+    queryset = Blog.objects.filter(status=1).order_by('-date_published')
+    template_name = 'blogs/blogs.html'
 
-    context = {
-        'blogs' : paged_blogs,
-        'state_choices': state_choices,
-        'bedroom_choices': bedroom_choices, 
-        'bathroom_choices': bathroom_choices,
-        'garage_choices': garage_choices, 
-        'price_choices': price_choices
-    }
 
-    return render(request, 'blogs/blogs.html', context)
+# class PostDetail(generic.DetailView):
+#     model = Post
+#     template_name = 'post_detail.html'
 
-def blog(request, blog_id):
-    blog = get_object_or_404(Blog, pk= blog_id) 
+def blog(request, slug): 
+    template_name = 'blogs/blog.html'
+    post = get_object_or_404(Blog, slug=slug)
+    comments = post.comments.filter(active=True)
+    new_comment = None
+    # Comment posted
     if request.method == 'POST':
-        image = request.FILES['image']
-        name = request.POST['name']
-        email = request.POST['email']
-        website = request.POST['website']
-        comment = request.POST['comment']
-        
-        
-        comments = Comment(image=image, name=name, email=email, website=website, comment=comment)
-        comments.save()
-        
-        # Send Mail  
-        if request.user.is_authenticated:
-            subject= str(request.user) +": Posted A Comment. "
-        else:
-            subject= "A Visitor:  Posted A Comment. "
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
 
+            # Create Comment object but don't save to database yet
+            new_comment = comment_form.save(commit=False)
+            # Assign the current post to the comment
+            new_comment.post = post
+            # Save the comment to the database
+            new_comment.save()
+    else:
+        comment_form = CommentForm()
 
-        message= name + " With The Email: " + email +" Posted A Comment At NJN HOMES Website: "   "\n\n The Comment Goes As Follows: \n\n" + comment + "\n\n\n Contact The Web Master For More Information On The Comment Posted.";
-        send_mail(subject, message, 'wgrealestate21@gmail.com', ['ntschangb@yahoo.com', 'ntschangb@gmail.com'] , [''])
-
-        
-        messages.success(request, 'Your Comment Has Been Posted')
-        
-    blogs = Comment.objects.all()
-    
-    context= { 
-        'blog': blog,
-        'blogs':blogs,
-        'state_choices': state_choices,
-        'bedroom_choices': bedroom_choices, 
-        'bathroom_choices': bathroom_choices,
-        'garage_choices': garage_choices,
-        'price_choices': price_choices,
-    }
-
-    return render(request, 'blogs/blog.html', context)
+    return render(request, template_name, {'post': post,
+                                           'comments': comments,
+                                           'new_comment': new_comment,
+                                           'comment_form': comment_form})

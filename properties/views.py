@@ -25,8 +25,8 @@ def properties(request):
     return render(request, 'properties/properties.html', context)
 
  
-def property_single(request, property_single_id):
-    property_single = get_object_or_404(Property_single, pk= property_single_id) 
+def property_single(request, slug):
+    property_single = get_object_or_404(Property_single, slug=slug) 
      
     context= {
         'property_single': property_single,
@@ -47,8 +47,7 @@ def search(request):
     if 'keywords' in request.GET:
         keywords = request.GET['keywords']
         if keywords:
-            queryset_list = queryset_list.filter(Q(description1__icontains=keywords)|
-                                                 Q(description2__icontains=keywords)|
+            queryset_list = queryset_list.filter(Q(content__icontains=keywords)|
                                                  Q(property_type__icontains=keywords)|
                                                  Q(title__icontains=keywords)|
                                                  Q(status__icontains=keywords)|

@@ -3,6 +3,7 @@ from datetime import datetime
 
 class Agent(models.Model):
     name = models.CharField(max_length = 30000, blank = True)
+    slug = models.SlugField(max_length=200, unique=True)
     role = models.CharField(max_length = 30000, blank = True)
     photo = models.ImageField(upload_to = 'Photos/Agents/%Y/%m', blank = True)
     description = models.TextField(blank=True)

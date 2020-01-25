@@ -52,10 +52,7 @@
           <div class="row">
             <div class="col-md-12 ">
               <p class="color-text-a">
-                {{about.description1}}
-              </p>
-              <p class="color-text-a">
-                  {{about.description2}}
+                {{about.description | linebreaks}}
               </p>
             </div>
           </div>
@@ -97,14 +94,14 @@
               <div class="card-header-d">
                 <div class="card-title-d align-self-center">
                   <h3 class="title-d">
-                    <a href="{% url 'agent' agent.id %}" class="link-two text-capitalize">{{agent.name}}
+                    <a href="{% url 'agent' agent.slug %}" class="link-two text-capitalize">{{agent.name}}
                     </a>
                   </h3>
                 </div>
               </div>
               <div class="card-body-d">
                 <p class="content-d color-text-a">
-                  {{agent.description | truncatechars:100}}
+                  {{agent.description | truncatechars:50 | linebreaks}}
                 </p>
                 <div class="info-agents color-a">
                   <p>

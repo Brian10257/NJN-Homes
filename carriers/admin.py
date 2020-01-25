@@ -7,7 +7,7 @@ class CarrierAdmin(admin.ModelAdmin):
     search_fields = ( 'company', 'job_title', 'address', 'employer', 'website')
     list_filter = ( 'company', 'job_title', 'address', 'employer', 'website')
     list_per_page = 50
-
+    prepopulated_fields = {'slug': ('company', 'job_title')}
 
 
 class ApplyAdmin(admin.ModelAdmin):

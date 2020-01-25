@@ -9,4 +9,5 @@ class Property_singleAdmin(admin.ModelAdmin):
     list_editable = ('is_published',)
     search_fields = ('title', 'address', 'city', 'state', 'zipcode')
     list_per_page = 20
+    prepopulated_fields = {'slug': ('state', 'title')}
 admin.site.register(Property_single, Property_singleAdmin)

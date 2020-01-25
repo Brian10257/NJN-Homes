@@ -5,6 +5,7 @@ class Carrier(models.Model):
     logo = models.ImageField(blank = True, upload_to = 'Photos/Carrier/Company Logo/%Y/%m', null = True)
     company = models.CharField(max_length = 2000, blank = True)
     job_title = models.CharField(max_length = 2000, blank = True)
+    slug = models.SlugField(max_length=200, unique=True)
     job_available = models.BooleanField(default = True, blank = True)
     address = models.CharField(max_length = 2000, blank = True)
     website = models.CharField(max_length = 2000, blank = True)
