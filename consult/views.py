@@ -28,7 +28,7 @@ def consult(request):
         send_mail(subject, message, 'wgrealestate21@gmail.com', ['ntschangb@yahoo.com', 'ntschangb@gmail.com'] , [email])
 
 
-        messages.success(request, ' Your Message Has Been Recieved. We\'ll get back to you latter')
+        messages.success(request, ': Your Message Has Been Recieved. We\'ll get back to you latter')
         return redirect('consult')
     
     

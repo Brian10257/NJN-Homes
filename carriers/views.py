@@ -61,7 +61,7 @@ def carrier(request, slug):
         send_mail(subject, message, 'wgrealestate21@gmail.com', ['ntschangb@yahoo.com', 'ntschangb@gmail.com'] , [''])
 
         
-        messages.success(request, ' Your Application Has Been Recieved. We\'ll get back to you latter')
+        messages.success(request, ': Your Application Has Been Recieved. We\'ll get back to you latter')
         
         
     context = {

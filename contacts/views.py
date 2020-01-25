@@ -11,7 +11,7 @@ def contact(request):
         name = request.POST['name']
         email = request.POST['email']
         phone = request.POST['phone']
-        message = request.POST['message']
+        message = request.POST['message'] 
         user_id = request.POST['user_id']
         agent_email = request.POST['agent_email']
 
@@ -21,8 +21,7 @@ def contact(request):
             has_contacted = Contact.objects.all().filter(
                 property_single_id=property_single_id, user_id=user_id)
             if has_contacted:
-                messages.error(
-                    request, 'You have already submited an inquiry for this particular property')
+                messages.error(request, ': You have already submited an inquiry for this particular property')
                 return redirect('properties')
 
         contact = Contact(property_single=property_single, property_single_id=property_single_id,
@@ -39,6 +38,5 @@ def contact(request):
             fail_silently=False
         )
 
-        messages.success(
-            request, ' Your request has been submitted, an Agent will get back to you soon')
+        messages.success(request, ': Your request has been submitted, an Agent will get back to you soon')
         return redirect('properties')

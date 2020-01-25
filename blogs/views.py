@@ -1,5 +1,6 @@
 from django.views import generic
 from .models import Blog
+from django.contrib import messages
 from .forms import CommentForm
 from django.shortcuts import render, get_object_or_404
 
@@ -29,10 +30,13 @@ def blog(request, slug):
             new_comment.post = post
             # Save the comment to the database
             new_comment.save()
+            messages.success(request, ': Comment Posted Successfuly')
     else:
         comment_form = CommentForm()
+    
+    context = {'post': post,
+               'comments': comments,
+               'new_comment': new_comment,
+               'comment_form': comment_form}
 
-    return render(request, template_name, {'post': post,
-                                           'comments': comments,
-                                           'new_comment': new_comment,
-                                           'comment_form': comment_form})
+    return render(request, template_name, context)

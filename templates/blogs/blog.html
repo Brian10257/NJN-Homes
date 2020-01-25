@@ -7,9 +7,9 @@
 <!--/ Intro Single star /-->
 <section class="intro-single text-capitalize">
     <div class="container">
+      {% include 'partials/_alerts.html' %} 
       <div class="row">
         <div class="col-md-12 col-lg-8">
-          {% include 'partials/_alerts.html' %}
           <div class="title-single-box">
             <h1 class="title-single" style="font-family: Aclonica; color:#000000">{{post.title}}</h1>
             <span class="color-text-a">{{post.sub_title}}.</span>
@@ -120,14 +120,12 @@
           {% endif %}
           </div>
           <div class="form-comments">
-            {% if new_comment %}
-            <div class="alert alert-success" role="alert">
-              Comment Posted Successfuly
+            <div class="alert alert-warning" style="font-size: 20px;" role="alert" data-dismiss="alert">
+              <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+              Comment Posted
             </div>
-            {% else %}
-            <h3>Leave a comment</h3>
+            <h3 style="font-size: 35px;font-weight:700;">Leave a comment</h3>
             </div>
-            {% endif %}
             <form action="{% url 'blog' post.slug %}" method="post" class="form-a">
               {% csrf_token %}
               {{comment_form | crispy}}

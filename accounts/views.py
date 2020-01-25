@@ -18,11 +18,11 @@ def register(request):
         if password == password2: 
             # Check Username
             if User.objects.filter(username=username).exists():
-                messages.error(request, 'That username is taken')
+                messages.error(request, ': That username is taken')
                 return redirect('register')
             else:
                 if User.objects.filter(email=email).exists():
-                    messages.error(request, 'That email is being used')
+                    messages.error(request, ': That email is being used')
                     return redirect('register')
                 else:
                  # Looks Good
@@ -32,10 +32,10 @@ def register(request):
                     #messages.success(request, 'You are now logged in')
                     #return redirect('index')
                     user.save()
-                    messages.success(request, 'You are now registered and can login')
+                    messages.success(request, ': You are now registered and can login')
                     return redirect('login')
         else:
-            messages.error(request, 'Passwords do not match')
+            messages.error(request, ': Passwords do not match')
             return redirect ('register')
       
     else:
@@ -58,10 +58,10 @@ def login(request):
     
         if user is not None:
             auth.login(request, user)
-            messages.success(request, 'Login Successful. Happy Browsing')
+            messages.success(request, ': Login Successful. Happy Browsing')
             return redirect('dashboard')
         else:
-            messages.error(request, 'Invalid Credentials: Please Verify You Entered The Correct Infomation.')
+            messages.error(request, ': Invalid Credentials: Please Verify You Entered The Correct Infomation.')
             return redirect('login')
     else:
         context = {
@@ -80,7 +80,7 @@ def login(request):
 def logout(request):
      if request.method == 'POST':
          auth. logout(request)
-         messages.success(request, 'You are now logged out')
+         messages.success(request, ': You are now logged out')
          return redirect ('login')
 
 def dashboard(request):
