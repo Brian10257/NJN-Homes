@@ -101,7 +101,7 @@ def search2(request):
     queryset_list = Carrier.objects.order_by('-date_posted')
     
     
-    # Keywords
+    # Keywords 
     if 'keywords' in request.GET:
         keywords = request.GET['keywords']
         if keywords:

@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="/static/css/plugins.css"> 
 {% extends 'base1.html' %}
 {% load static %}
+{% load humanize %}
 {% block title %} Carriers{% endblock %}
 {% block content %}
 
@@ -88,7 +89,7 @@
                     <div class="col-md-8 col-sm-8">
                         <div class="company-content">
                             <h3 style="font-family: krinkes_regular_personal_usRg;"><u>{{carrier.job_title}}</u></h3>
-                            <p><span class="company-name"><i class="fa fa-briefcase"></i>{{carrier.company}}</span><span class="company-location"><i class="fa fa-map-marker"></i> {{carrier.address}}</span><span class="package"><i class="fa fa-money"></i>{{carrier.salary}}</span></p>
+                            <p><span class="company-name"><i class="fa fa-briefcase"></i>{{carrier.company}}</span><span class="company-location"><i class="fa fa-map-marker"></i> {{carrier.address}}</span><span class="package"><i class="fa fa-money"></i>{{carrier.salary | intcomma}}</span></p>
                         </div>
                     </div>
                     <div class="col-md-2 col-sm-2">

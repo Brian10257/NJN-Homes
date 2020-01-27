@@ -50,7 +50,7 @@
                     </ul>
                     <div class="panel panel-default text-capitalize">
                         <div class="panel-heading">
-                            <i class="fa fa-user fa-fw" style="font-size: 20px;"></i><span style="font-size: 20px;font-family:Aclonica;color:#109722">About The Job</span> 
+                            <i class="fa fa-user fa-fw" style="font-size: 20px;"></i><span style="font-size: 20px;font-family:Aclonica;color:#109722">About Us</span> 
                         </div>
                                             <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -167,7 +167,7 @@
                 <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <input type="file" name="docs" accept=".jpg, .jpeg, .png, .docs, .doc, .pdf, .txt" id="docs" aria-required="false">
+                                <input type="file" name="docs" accept=".pdf," id="docs" aria-required="false">
                             </div>
                         </div>
                     <div class="col-md-12 mb-3">
@@ -258,11 +258,11 @@
                     <h4 class="icon-title">Write Us</h4>
                   </div>
                   <div class="icon-box-content">
-                    <p class="mb-1">Our Email.
-                      <span class="color-a">njnhomes@gmail.com</span>
+                    <p class="mb-1">Our Email:
+                      <span class="color-a">{{carrier.mail}}</span>
                     </p>
-                    <p class="mb-1">Our Phone.
-                      <span class="color-a">+54 356 945234</span>
+                    <p class="mb-1">Our Contact:
+                      <span class="color-a">{{carrier.contact}}</span>
                     </p>
                   </div>
                 </div>
@@ -277,7 +277,7 @@
                   </div>
                   <div class="icon-box-content">
                     <p class="mb-1">
-                      Douala, Bonabery
+                      {{carrier.address }}
                     </p>
                   </div>
                 </div>

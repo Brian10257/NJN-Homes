@@ -8,6 +8,7 @@ class Carrier(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
     job_available = models.BooleanField(default = True, blank = True)
     address = models.CharField(max_length = 2000, blank = True)
+    contact = models.CharField(max_length = 100, blank = True)
     website = models.CharField(max_length = 2000, blank = True)
     employer = models.CharField(max_length = 2000, blank = True)
     mail = models.CharField(max_length = 2000, blank  = True)
