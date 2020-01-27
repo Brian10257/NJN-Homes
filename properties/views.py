@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.db.models import Q
 from properties.choices import price_choices, bedroom_choices, bathroom_choices, garage_choices, state_choices  
 from .models import Property_single
-
+ 
 def properties(request):
     properties = Property_single.objects.order_by('-list_date').filter(is_published = True)
 

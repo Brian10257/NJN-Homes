@@ -1,4 +1,5 @@
 from django.views import generic
+from django.views.generic import ListView
 from .models import Blog
 from django.contrib import messages
 from .forms import CommentForm
@@ -8,6 +9,8 @@ from django.shortcuts import render, get_object_or_404
 class BlogList(generic.ListView):
     queryset = Blog.objects.filter(status=1).order_by('-date_published')
     template_name = 'blogs/blogs.html'
+    paginate_by = 6
+    model = Blog
 
 
 # class PostDetail(generic.DetailView):

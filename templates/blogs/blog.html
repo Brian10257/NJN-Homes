@@ -110,6 +110,7 @@
                 <div class="comment-details">
                   <h4 class="comment-author">{{comment.name}}</h4>
                   <span>{{comment.comment_date}}</span>
+                  <a href="{{comment.website}}">{{comment.website}}</a>
                   <p class="comment-description">
                     {{comment.body | linebreaks}}
                   </p>
@@ -120,12 +121,14 @@
           {% endif %}
           </div>
           <div class="form-comments">
-            <div class="alert alert-warning" style="font-size: 20px;" role="alert" data-dismiss="alert">
+            {% if new_comment %}
+            <div class="alert alert-warning" style="font-size: 20px;" role="alert" data-dismiss="alert">  
               <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
               Comment Posted
             </div>
-            <h3 style="font-size: 35px;font-weight:700;">Leave a comment</h3>
+            {% endif %}
             </div>
+            <div><h3 style="font-size: 35px;font-weight:700;">Leave a comment</h3></div>
             <form action="{% url 'blog' post.slug %}" method="post" class="form-a">
               {% csrf_token %}
               {{comment_form | crispy}}
