@@ -30,9 +30,11 @@ def contact(request):
 
         # Send Mail
         send_mail(
-            'Inquiry On Listed Property',
+            'SUBJECT: An Inquiry On Listed Property',
             'There has been an inquiry for ' + property_single +
-            '. Sign into admin panel for more info',
+            '. Sign into admin panel for more info' "\n\n" 
+            "SENDER:  "+ name+ ',' " PHONE NUMBER: "+phone+',' " EMAIL:  "+email+',' " LISTING:  "+ property_single+  "\n\n" 
+            "MESSAGE: \n\n " + message,
             'ntschangb@gmail.com',
             [agent_email, 'ntschangb@gmail.com'],
             fail_silently=False
