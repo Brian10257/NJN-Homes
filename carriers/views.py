@@ -52,12 +52,12 @@ def carrier(request, slug):
                 
         # Send Mail  
         if request.user.is_authenticated:
-            subject= str(request.user) +": Message Subject; "+ subject
+            subject= "Message Subject: "+ subject
         else:
             subject= "A Visitor: Message Subject; "+ subject
 
 
-        message= name + " With The Email: " + email +" And Phone Number: "+phone+ ", Deposited A Job Application For The Position Of: " +str(carrier)+ "\n\n" + message+ str(files) +"\n\n\n Contact The Web Master For More Information On This Applicaton And Also To Access The Applicant's Files.";
+        message="Mr/Miss  "+ name + " With The Email: " + email +" And Phone Number: "+phone+ ", Deposited A Job Application For The Position Of: " +str(carrier)+ "\n\n" + message+ str(files) +"\n\n\n Contact The Web Master For More Information On This Applicaton And Also To Access The Applicant's Files.";
         send_mail(subject, message, 'wgrealestate21@gmail.com', ['ntschangb@yahoo.com', 'ntschangb@gmail.com'] , [''])
 
         
