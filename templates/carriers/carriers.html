@@ -138,25 +138,29 @@
                         </div> 
                         <div class="user-social-profile">
                             <ul>
+                            {% if user.is_authenticated %}
                                 {% if team.facebook %}
-                                <li><a href="{{team.facebook}}"><i class="fa fa-facebook" style="background: #295396;"></i></a></li>
+                                <li><a {% if user.is_authenticated %} href="{{team.facebook}}"{% endif %}><i class="fa fa-facebook" style="background: #295396;"></i></a></li>
                                 {% endif %}
 
-                                {% if team.teitter %}
-                                <li><a href=" {{team.twitter}} "><i class="fa fa-twitter" style="background: #1da0f2;"></i></a></li>
+                                {% if team.twitter %}
+                                <li><a {% if user.is_authenticated %} href=" {{team.twitter}} " {% endif %}><i class="fa fa-twitter" style="background: #1da0f2;"></i></a></li>
                                 {% endif %}
 
                                 {% if team.instagram %}
-                                <li><a href=" {{team.instagram}} "><i class="fa fa-instagram" style="background: #d3368c;"></i></a></li>
+                                <li><a {% if user.is_authenticated %} href=" {{team.instagram}} " {% endif %}><i class="fa fa-instagram" style="background: #d3368c;"></i></a></li>
                                 {% endif %}
 
                                 {% if team.google_plus %}
-                                <li><a href="{{team.google_plus}}"><i class="fa fa-google-plus" style="background: #d6201f;"></i></a></li>
+                                <li><a {% if user.is_authenticated %} href="{{team.google_plus}}" {% endif %}><i class="fa fa-google-plus" style="background: #d6201f;"></i></a></li>
                                 {% endif %}
 
                                 {% if team.linkedin %}
-                                <li><a href="{{team.linkedin}}"><i class="fa fa-linkedin" style="background: #0077b5;"></i></a></li>
+                                <li><a {% if user.is_authenticated %} href="{{team.linkedin}}" {% endif %}><i class="fa fa-linkedin" style="background: #0077b5;"></i></a></li>
                                 {% endif %}
+                            {% else %}
+                            <p><a href="{% url 'login' %}">Login</a> To View Social Links</p>
+                            {% endif %}
                             </ul>
                         </div>
                     </div>
