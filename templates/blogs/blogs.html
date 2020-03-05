@@ -45,11 +45,11 @@
             <div class="card-overlay">
               <div class="card-header-b">
                 <div class="card-category-b">
-                  <a href="{% url 'blog' post.slug %}" class="category-b">{{post.category}}</a>
+                  <a href="{{post.get_absolute_url}}" class="category-b">{{post.category}}</a>
                 </div>
                 <div class="card-title-b">
                   <h2 class="title-2">
-                    <a href="{% url 'blog' post.slug %}">{{post.sub_title}}
+                    <a href="{{post.get_absolute_url}}">{{post.sub_title}}
                       </a>
                   </h2>
                 </div>

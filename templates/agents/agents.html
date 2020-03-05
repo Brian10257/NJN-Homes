@@ -46,7 +46,7 @@
               <div class="card-header-d">
                 <div class="card-title-d align-self-center">
                   <h3 class="title-d text-capitalize">
-                    <a href="{% url 'agent' agent.slug %}" class="link-two">{{agent.name}}
+                    <a href="{{agent.get_absolute_url}}" class="link-two">{{agent.name}}
                       </a>
                   </h3>
                 </div>

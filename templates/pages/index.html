@@ -82,17 +82,17 @@
             <div class="card-overlay-a-content">
               <div class="card-header-a">
                 <h2 class="card-title-a">
-                  <a href="{% url 'property_single' property_single.slug %}">{{property_single.title}}
+                  <a href="{{property_single.get_absolute_url}}">{{property_single.title}}
                     <br /> {{property_single.city}}</a>
                 </h2>
               </div>
               <br>
               <div class="card-body-a">
                 <div class="price-box d-flex">
-                  <span ><a href="{% url 'property_single' property_single.slug %}" class="price-a"> {{property_single.status}} | $ {{property_single.price | intcomma}}</a></span>
+                  <span ><a href="{{property_single.get_absolute_url}}" class="price-a"> {{property_single.status}} | $ {{property_single.price | intcomma}}</a></span>
                 </div>
                 <br>
-                <a href="{% url 'property_single' property_single.slug %}" class="link-a">Click here to view
+                <a href="{{property_single.get_absolute_url}}" class="link-a">Click here to view
                   <span class="ion-ios-arrow-forward"></span>
                 </a>
               </div>
@@ -178,7 +178,7 @@
                   <div class="card-title-d align-self-center">
                     <h3 class="title-d">
 
-                      <a {% if user.is_authenticated %} href="{% url 'agent' agent.slug %}" {% endif %} class="link-two">{{agent.name}}</a>
+                      <a {% if user.is_authenticated %} href="{{agent.get_absolute_url}}" {% endif %} class="link-two">{{agent.name}}</a>
                     </h3>
                   </div>
                 </div>
@@ -290,11 +290,11 @@
           <div class="card-overlay">
             <div class="card-header-b">
               <div class="card-category-b">
-                <a href="{% url 'blog' blog.slug %}" class="category-b">{{blog.category}}</a>
+                <a href="{{blog.get_absolute_url}}" class="category-b">{{blog.category}}</a>
               </div>
               <div class="card-title-b">
                 <h2 class="title-2">
-                  <a href="{% url 'blog' blog.slug %}">{{blog.sub_title}}</a>
+                  <a href="{{blog.get_absolute_url}}">{{blog.sub_title}}</a>
                 </h2>
               </div>
               <div class="card-date">

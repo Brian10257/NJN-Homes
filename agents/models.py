@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime
+from django.urls import reverse
 
 class Agent(models.Model):
     name = models.CharField(max_length = 30000, blank = True)
@@ -18,4 +19,7 @@ class Agent(models.Model):
     hire_date = models.DateTimeField(default = datetime.now, blank = True)
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('agent', kwargs={'slug':self.slug})
 

@@ -1,6 +1,7 @@
 from django.db import models
 from datetime import datetime
 from agents.models import Agent
+from django.urls import reverse
 
 class Property_single(models.Model):
     agent = models.ForeignKey(Agent, on_delete= models.DO_NOTHING)
@@ -8,7 +9,7 @@ class Property_single(models.Model):
     address = models.CharField(max_length = 300,  blank = True)
     city = models.CharField(max_length = 200,  blank = True)
     slug = models.SlugField(max_length=200, unique=True)
-    state = models.CharField(max_length = 200,  blank = True) 
+    state = models.CharField(max_length = 200,  blank = True)
     zipcode = models.CharField(max_length = 50,  blank = True)
     content = models.TextField(blank = True)
     price = models.IntegerField()
@@ -38,3 +39,6 @@ class Property_single(models.Model):
     list_date = models.DateTimeField(default = datetime.now, blank = True)
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('property_single', kwargs={'slug':self.slug})
