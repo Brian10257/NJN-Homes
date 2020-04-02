@@ -12,7 +12,7 @@ class BlogList(generic.ListView):
     paginate_by = 6
     model = Blog
 
-
+ 
 # class PostDetail(generic.DetailView):
 #     model = Post
 #     template_name = 'post_detail.html'
