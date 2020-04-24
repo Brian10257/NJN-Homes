@@ -1,4 +1,9 @@
 
+setTimeout(function () {
+	$('#message').fadeOut('slow');
+}, 5000);
+
+
 $(document).ready(function(){
 			$("#testimonial-slider").owlCarousel({
 				items:1,

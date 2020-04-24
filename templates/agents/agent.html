@@ -70,31 +70,41 @@
                 </div>
                 <div class="socials-footer">
                   <ul class="list-inline">
+                  {% if agent.facebook %}
                     <li class="list-inline-item">
                       <a href="{{agent.facebook}}" class="link-one">
                         <i class="fa fa-facebook" style="color:#295396; font-size: 30px" aria-hidden="true"></i>
                       </a>
                     </li>
+                  {% endif %}
+                  {% if agent.twitter %}
                     <li class="list-inline-item">
                       <a href="{{agent.twitter}}" class="link-one">
                         <i class="fa fa-twitter" style="color:#1da0f2; font-size: 30px" aria-hidden="true"></i>
                       </a>
                     </li>
+                  {% endif %}
+                  {% if agent.instagram %}
                     <li class="list-inline-item">
                       <a href="{{agent.instagram}}" class="link-one">
                         <i class="fa fa-instagram" style="color:#d3368c; font-size: 30px" aria-hidden="true"></i>
                       </a>
                     </li>
+                  {% endif %}
+                  {% if agent.google_plus %}
                     <li class="list-inline-item">
                       <a href="{{agent.google_plus}}" class="link-one">
                         <i class="fa fa-google-plus" style="color:#d6201f; font-size: 30px"  aria-hidden="true"></i>
                       </a>
                     </li>
+                  {% endif %}
+                  {% if agent.linkedin %}
                     <li class="list-inline-item">
                       <a href="{{agent.linkedin}}" class="link-one">
                         <i class="fa fa-linkedin" style="color:#0077b5; font-size: 30px" aria-hidden="true"></i>
                       </a>
                     </li>
+                  {% endif %}
                   </ul>
                 </div>
               </div>

@@ -18,7 +18,7 @@ def index(request):
     context = {
         'agents':agents,
         'properties' : properties,
-        'state_choices': state_choices,
+        'state_choices': state_choices, 
         'bedroom_choices': bedroom_choices, 
         'bathroom_choices': bathroom_choices,
         'garage_choices': garage_choices,

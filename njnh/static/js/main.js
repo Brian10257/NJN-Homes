@@ -1,3 +1,8 @@
+setTimeout(function () {
+	$('#message').fadeOut('slow');
+}, 5000);
+
+
 (function ($) {
   "use strict";
   
