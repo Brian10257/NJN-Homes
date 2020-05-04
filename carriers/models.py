@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime
+from django.urls import reverse
 
 class Carrier(models.Model):
     logo = models.ImageField(blank = True, upload_to = 'Photos/Carrier/Company Logo/%Y/%m', null = True)
@@ -46,6 +47,9 @@ class Carrier(models.Model):
     instagram = models.CharField(max_length = 50000, blank = True)
     def __str__(self):
         return self.job_title
+
+    def get_absolute_url(self):
+        return reverse('carrier', kwargs={'slug': self.slug})
     
 class Apply(models.Model):
     docs = models.FileField(upload_to = 'Application Files/%Y/%m')

@@ -45,8 +45,8 @@
               <div class="card-overlay-a-content">
                 <div class="card-header-a">
                   <h2 class="card-title-a">
-                    <a href="{% url 'property_single' property_single.slug %}">{{property_single.title}}
-                    <a href="{% url 'property_single' property_single.slug %}">{{property_single.city}}
+                    <a href="{{property_single.get_absolute_url}}">{{property_single.title}}
+                    <a href="{{property_single.get_absolute_url}}">{{property_single.city}}
                       </a>
                   </h2>
                 </div>
@@ -54,7 +54,7 @@
                   <div class="price-box d-flex">
                     <span class="price-a">{{property_single.status}} | ${{property_single.price | intcomma}}</span>
                   </div>
-                  <a href="{% url 'property_single' property_single.slug %}" class="link-a">Click here to view
+                  <a href="{{property_single.get_absolute_url}}" class="link-a">Click here to view
                     <span class="ion-ios-arrow-forward"></span>
                   </a>
                 </div>

@@ -218,31 +218,41 @@
               </ul>
               <div class="socials-a">
                 <ul class="list-inline">
+                  {% if property_single.agent.facebook %}
                   <li class="list-inline-item">
                     <a href="{{property_single.agent.facebook}}">
                       <i class="fa fa-facebook" style="color:#295396; font-size: 30px"  aria-hidden="true"></i>
                     </a>
                   </li>
+                  {% endif %}
+                  {% if property_single.agent.twitter %}
                   <li class="list-inline-item">
                     <a href="{{property_single.agent.twitter}}">
                       <i class="fa fa-twitter" style="color:#1da0f2; font-size: 30px" aria-hidden="true"></i>
                     </a>
                   </li>
+                  {% endif %}
+                  {% if property_single.agent.instagram %}
                   <li class="list-inline-item">
                     <a href="{{property_single.agent.instagram}}">
                       <i class="fa fa-instagram" style="color:#d3368c; font-size: 30px" aria-hidden="true"></i>
                     </a>
                   </li>
+                  {% endif %}
+                  {% if property_single.agent.google_plus %}
                   <li class="list-inline-item">
                     <a href="{{property_single.agent.google_plus}}">
                       <i class="fa fa-google-plus" style="color:#d6201f; font-size: 30px" aria-hidden="true"></i>
                     </a>
                   </li>
+                  {% endif %}
+                  {% if property_single.agent.linkedin %}
                   <li class="list-inline-item">
                     <a href="{{property_single.agent.linkedin}}">
                       <i class="fa fa-linkedin" style="color:#0077b5; font-size: 30px" aria-hidden="true"></i>
                     </a>
                   </li>
+                  {% endif %}
                 </ul>
               </div>
             </div>
